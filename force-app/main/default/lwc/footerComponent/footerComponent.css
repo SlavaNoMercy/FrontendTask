@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  max-height: 120px;
+  background-color: black;
+  color: white;
+}
+
+.column {
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+}
+
+.row {
+  text-align: center;
+  color: inherit;
+}

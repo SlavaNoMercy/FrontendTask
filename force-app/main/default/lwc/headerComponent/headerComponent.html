@@ -1,17 +1,58 @@
 <template>
-    <div class="slds-m-top_medium slds-m-bottom_x-large">
-        <h2 class="slds-text-heading_small slds-m-bottom_medium">
-            Button menus using <code>lightning-menu-divider</code> components. The <code>lightning-menu-divider</code> components use <code>standard</code> and <code>compact</code> variants.
-        </h2>
-            <lightning-button-menu alternative-text="Show menu" class="slds-m-left_xx-small" icon-name="justify_text">
-                <lightning-menu-item value="MenuItemOne" label="Menu Item One"></lightning-menu-item>
-                <lightning-menu-item value="MenuItemTwo" label="Menu Item Two"></lightning-menu-item>
-                <lightning-menu-divider variant="compact"></lightning-menu-divider>
-                <lightning-menu-item value="MenuItemThree" label="Menu Item Three"></lightning-menu-item>
-                <lightning-menu-divider variant="compact"></lightning-menu-divider>
-                <lightning-menu-item value="MenuItemFour" label="Menu Item Four"></lightning-menu-item>
-            </lightning-button-menu>
-        </div>
-    </div>    
-    <span class="line"></span>
+  <div class="top-nav-menu">
+    <div class="menu-item">
+        <p>About Us</p>
+    </div>
+    <div class="menu-item">
+        <p>About Us</p>
+    </div>
+    <div class="menu-item">
+        <p>About Us</p>
+    </div>
+    <div class="menu-item">
+        <p>About Us</p>
+    </div>
+    <div class="menu-item">
+        <p>About Us</p>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with a custom <code>onselect</code> event handler. The value
+      of the item selected is shown below the menu.
+    </h2>
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu
+        alternative-text="Show menu"
+        variant="border-filled"
+        onselect={handleOnselect}
+      >
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="About Us"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="About Us"
+        ></lightning-menu-item>
+        <lightning-menu-item value="MenuItemThree"
+          label="About Us">
+        </lightning-menu-item>
+        <lightning-menu-item value="MenuItemFour"
+          label="About Us">
+        </lightning-menu-item>
+        <lightning-menu-item value="MenuItemFive"
+          label="About Us">
+        </lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+
+    <div class="slds-m-vertical_medium">
+      <p>
+        The value of the menu item you selected is:
+        <span class="slds-text-heading_small">{selectedItemValue}</span>
+      </p>
+    </div>
+  </div>
 </template>

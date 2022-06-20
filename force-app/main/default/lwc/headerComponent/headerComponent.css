@@ -1,7 +1,19 @@
-line {
-    width: 75%;
-    height: 2px;
-    background-color: #000000;
-    display: block;
-    margin: 2% auto;
+.line {
+  width: 75%;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+  margin: 2% auto;
+}
+
+.top-nav-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  text-align: center;
+  border: none;
 }
