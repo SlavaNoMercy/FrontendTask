@@ -1,6 +1,17 @@
 <template>
-    <div class="component-container">
-        <c-product-selection></c-product-selection>
+  <div class="component-container">
+    <div class="status-bar">
+      <div class="status-element" id="#product">
+        <p>Product</p>
+      </div>
+      <div class="status-element" id="#submit">
+        <p>Submit</p>
+      </div>
     </div>
-    <!-- <c-form-submit></c-form-submit> -->
+    <c-product-selection></c-product-selection>
+  </div>
+  <div class="next-button">
+    <button class="button">Next</button>
+  </div>
+  <!-- <c-form-submit></c-form-submit> -->
 </template>

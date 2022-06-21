@@ -1,4 +1,42 @@
 .component-container {
+  max-width: 900px;
   padding: 10px;
-  box-shadow: 5px 10px 18px #888888;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 0px 800px #f5f5f5;
+}
+
+.status-bar {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid rgb(184, 184, 184);
+}
+
+.status-element {
+  display: flex;
+  border-bottom: 3px solid #b3b3ff;
+  padding: 10px;
+  margin-left: 75px;
+}
+
+.next-button {
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.button {
+  background-color: #cccccc;
+  border: none;
+  border-radius: 30px;
+  color: rgb(27, 27, 27);
+  padding: 13px 90px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

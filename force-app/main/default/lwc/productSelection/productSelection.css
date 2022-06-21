@@ -11,11 +11,29 @@
 }
 
 .element {
-  background-color: rgb(177, 177, 177);
+  background-color: #cccccc;
   color: black;
   border-radius: 35px;
   margin: 10px;
   width: 400px;
   height: 225px;
   text-align: center;
+}
+
+.next-button {
+  margin: 27px 10px 10px 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.button {
+  background-color: #cccccc;
+  border: none;
+  border-radius: 30px;
+  color: rgb(27, 27, 27);
+  padding: 13px 90px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
