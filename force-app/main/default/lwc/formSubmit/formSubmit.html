@@ -1,3 +1,97 @@
 <template>
+    <div class="form">
+        <div class="title">Submit Case</div>
+        <div class="subtitle">Its easy to submit your case. Simply fill the form bellow and get a decision in minutes.</div>
+        <div class="input-container ic1">
+          <input id="title" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="title" class="placeholder">Title</label>
+        </div>
+        <div class="input-container ic1">
+            <input id="firstname" class="input" type="text" placeholder=" " />
+            <div class="cut"></div>
+            <label for="firstname" class="placeholder">First name</label>
+          </div>
+        <div class="input-container ic2">
+          <input id="lastname" class="input" type="text" placeholder=" " />
+          <div class="cut"></div>
+          <label for="lastname" class="placeholder">Second name</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="email" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="email" class="placeholder">Email address</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="phone" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="phone" class="placeholder">Preffered Contact Number</label>
+          </div>
+          <div class="input-container ic2">
+            <input id="companyType" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="companyType" class="placeholder">Company Type</label> <!-- picklist -->
+          </div>
+          <div class="input-container ic2">
+            <input id="company" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="company" class="placeholder">Company</label>
+          </div>
+          <div class="input-container ic2">
+            <input id="description" class="input" type="text" placeholder=" " />
+            <div class="cut cut-short"></div>
+            <label for="description" class="placeholder">Case content</label>
+          </div>
+        <button type="text" class="submit">submit</button>
+      </div>
+
+      <!--    
+<!-  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--   
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <!-    -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--    
     
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name="orgid" value="00D5j00000AHFVr">
+    <input type=hidden name="retURL" value="http://roga-i-kopyta.com">
+    
+    <!-    -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="slava.nomercy@gmail.com">                                        -->
+    <!--    -->
+    
+   <!-- <label for="type">Type</label><select  id="type" name="type"><option value="">- -None- -</option><option value="Mechanical">Mechanical</option>
+    <option value="Electrical">Electrical</option>
+    <option value="Electronic">Electronic</option>
+    <option value="Structural">Structural</option>
+    <option value="Other">Other</option>
+    </select><br>
+    
+    <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+    
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    
+    <label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
+    
+    <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+    
+    <label for="description">Description</label><textarea name="description"></textarea><br>
+    
+    <input type="hidden"  id="external" name="external" value="1" /><br>
+    
+    <input type="submit" name="submit">
+    
+    </form>-->
 </template>
