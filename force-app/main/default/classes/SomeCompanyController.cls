@@ -1,6 +1,9 @@
 public without sharing class SomeCompanyController {
-  public String getProducts() {
+  @AuraEnabled(cacheable=true)
+  public static String getProducts() {
     JSONGenerator jsonGenerator = JSON.createGenerator(true);
+    jsonGenerator.writeStartObject();
+    jsonGenerator.writeFieldName('products');
     jsonGenerator.writeStartArray();
 
     jsonGenerator.writeStartObject();
@@ -22,6 +25,7 @@ public without sharing class SomeCompanyController {
     jsonGenerator.writeEndObject();
 
     jsonGenerator.writeEndArray();
+    jsonGenerator.writeEndObject();
 
     return jsonGenerator.getAsString();
   }

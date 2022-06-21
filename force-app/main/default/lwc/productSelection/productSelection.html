@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="container">
-      <template if:true={products.data}>
-        <template for:each={products.data} for:item="currentItem">
-          <c-product-item class="slds-p-top_medium slds-p-bottom_medium"
-            key={currentItem.Id}
-            macase={currentItem}
-            onselect={handleSelect}>
-          </c-product-item>
-        </template>
+      <template for:each={products} for:item="currentItem">
+        <c-product-item class="slds-p-top_medium slds-p-bottom_medium"
+          key={currentItem.Id}
+          product={currentItem}
+          onselect={handleSelect}>
+        </c-product-item>
       </template>
       <!-- <div class="element" onclick={selectedProduct}>#content</div>
       <div class="element">#content</div>

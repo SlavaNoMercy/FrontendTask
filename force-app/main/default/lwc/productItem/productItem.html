@@ -1,3 +1,13 @@
 <template>
-    
+    <div class="element" onclick={selectProduct}>
+        <h2 class="element-title">
+            {product.title}
+        </h2>
+        <p data-id="symbol" class="element-symbol">
+            {product.symbol}
+        </p>
+        <p data-id="message" class="element-message-hide">
+            {product.message}
+        </p>
+    </div>
 </template>

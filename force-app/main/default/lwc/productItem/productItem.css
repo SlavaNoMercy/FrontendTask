@@ -1,0 +1,40 @@
+.element {
+    background-color: #cccccc;
+    color: black;
+    border-radius: 35px;
+    margin: 10px;
+    width: 400px;
+    height: 225px;
+    text-align: center;
+}
+
+.element-title {
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.element-symbol {
+    font-size: 85px;
+    /*display: none;*/
+}
+
+.element-symbol-hide {
+    /*font-size: 85px;*/
+    display: none;
+}
+
+.element-message-hide {
+    display: none;
+}
+
+.element-message {
+    /*display: none;*/
+    background-color: aliceblue;
+    display: block;
+}
+
+.element:hover {
+    background-color: #dddddd;
+    cursor: pointer;
+}

@@ -10,16 +10,6 @@
   flex-wrap: wrap;
 }
 
-.element {
-  background-color: #cccccc;
-  color: black;
-  border-radius: 35px;
-  margin: 10px;
-  width: 400px;
-  height: 225px;
-  text-align: center;
-}
-
 .next-button {
   margin: 27px 10px 10px 10px;
   display: flex;
