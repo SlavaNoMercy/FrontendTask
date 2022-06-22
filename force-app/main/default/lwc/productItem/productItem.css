@@ -3,19 +3,19 @@
     color: black;
     border-radius: 35px;
     margin: 10px;
-    width: 400px;
-    height: 225px;
+    width: 294px;
+    height: 190px;
     text-align: center;
 }
 
 .element-title {
-    font-size: 20px;
-    padding-top: 20px;
+    font-size: 16px;
+    padding-top: 19px;
     font-weight: bold;
 }
 
 .element-symbol {
-    font-size: 85px;
+    font-size: 76px;
     /*display: none;*/
 }
 
