@@ -8,10 +8,29 @@
         <p>Submit</p>
       </div>
     </div>
-    <c-product-selection></c-product-selection>
+    <template if:true={state.firstPage}>
+      <c-product-selection></c-product-selection>
+    </template>
+    <template if:true={state.secondPage}>
+      <c-form-submit></c-form-submit>
+    </template>
   </div>
-  <div class="next-button">
-    <button class="button">Next</button>
-  </div>
-  <!-- <c-form-submit></c-form-submit> -->
+  <template if:true={state.firstPage}>
+    <div class="next-button">
+      <button class="button" onclick={handleNextPageEvent}>Next</button>
+    </div>
+  </template>
+  <template if:true={state.secondPage}>
+    <div class="component-container">
+      By clicking "Submit" you confirm that you are informed...
+    </div>
+    <div class="component-container">
+      <div class="prev-button">
+        <button class="button" onclick={handlePrevPageEvent}>Previous</button>
+      </div>
+      <div class="next-button-submit">
+        <button class="button submit">Submit</button>
+      </div>
+    </div>
+  </template>
 </template>
