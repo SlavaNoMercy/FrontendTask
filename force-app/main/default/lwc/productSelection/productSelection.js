@@ -26,11 +26,16 @@ export default class ProductSelection extends LightningElement {
   constructor() {
     super();
     this.template.addEventListener("select", this.handleSelect.bind(this));
+    this.template.addEventListener("unselect", this.handleUnselect.bind(this));
   }
 
   handleSelect(event) {
     const product = event.detail;
     this.choseProduct(this.products, product);
+  }
+
+  handleUnselect(){
+    this.selectedProduct = {Id:"dummyId"};
   }
 
   choseProduct(array, product) {

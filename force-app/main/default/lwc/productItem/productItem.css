@@ -42,6 +42,6 @@
     cursor: pointer;
 }
 
-element.selected:hover {
-    background-color: rgb(146, 116, 216);
+.element.selected:hover {
+    background-color: rgb(118, 121, 255);
 }

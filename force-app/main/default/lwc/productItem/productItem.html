@@ -13,7 +13,7 @@
         </div>
     </template>
     <template if:true={isSelected}>
-        <div class="element selected">
+        <div class="element selected" onclick={unselectProduct}>
             <h2 class="element-title">
                 {product.title}
             </h2>

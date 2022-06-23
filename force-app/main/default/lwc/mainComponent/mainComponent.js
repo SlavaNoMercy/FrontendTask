@@ -11,6 +11,7 @@ export default class MainComponent extends LightningElement {
     constructor() {
         super();
         this.template.addEventListener("select", this.handleSelectProduct.bind(this));
+        this.template.addEventListener("unselect", this.handleUnselectProduct.bind(this));
       }
 
     handleNextPageEvent(){
@@ -30,4 +31,10 @@ export default class MainComponent extends LightningElement {
         this.buttonActive = true;
         this.selectedProduct = chosenProduct;
     }
+
+    handleUnselectProduct(){
+        this.buttonActive = false;
+    }
+
+
 }

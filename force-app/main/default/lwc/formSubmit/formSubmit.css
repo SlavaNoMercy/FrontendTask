@@ -46,7 +46,7 @@
 }
 
 .input {
-  background-color: #ededed;
+  background-color: #f6f6f6;
   border-radius: 35px;
   border: 0;
   box-sizing: border-box;
@@ -56,6 +56,14 @@
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
+}
+
+.required-field {
+  float: right;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 6px;
 }
 
 /* .cut {
@@ -107,4 +115,16 @@ input:focus {
 
 .input:focus ~ .placeholder {
   color: #000;
+}
+
+.input.selector {
+  appearance: none;
+}
+
+.input-container.ic1::after {
+  content: "\142F";
+  position: absolute;
+  top: 17px;
+  font-size: 13px;
+  right: 25px;
 }
