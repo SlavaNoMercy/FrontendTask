@@ -13,7 +13,9 @@ export default class ProductItem extends LightningElement {
 
     selectProduct(){
         const selectEvent = new CustomEvent('select', {
-            detail: this.product.Id
+            bubbles: true,
+            composed: true,
+            detail: this.product
         });
         this.dispatchEvent(selectEvent);
     } 

@@ -1,7 +1,7 @@
 import { LightningElement, track } from "lwc";
 
 export default class ProductSelection extends LightningElement {
-  @track selectedProduct = {Id:"dummyId"};
+  @track selectedProduct = { Id: "dummyId" };
   @track products = [
     {
       Id: "1stProduct",
@@ -29,16 +29,15 @@ export default class ProductSelection extends LightningElement {
   }
 
   handleSelect(event) {
-    const textVal = event.detail;
-    this.choseProduct(this.products, textVal);
+    const product = event.detail;
+    this.choseProduct(this.products, product);
   }
 
-  choseProduct(array, productId) {
+  choseProduct(array, product) {
     array.forEach((element) => {
-      if (element.Id === productId) {
+      if (element.Id === product.Id) {
         this.selectedProduct = element;
-        console.log("item selected: " + this.selectedProduct);
       }
-    })
+    });
   }
 }

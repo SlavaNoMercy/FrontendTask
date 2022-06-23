@@ -6,6 +6,12 @@ export default class MainComponent extends LightningElement {
         secondPage:false
     }
     @track buttonActive = false;
+    @track selectedProduct;
+
+    constructor() {
+        super();
+        this.template.addEventListener("select", this.handleSelectProduct.bind(this));
+      }
 
     handleNextPageEvent(){
         this.state.firstPage = false;
@@ -15,5 +21,13 @@ export default class MainComponent extends LightningElement {
     handlePrevPageEvent(){
         this.state.firstPage = true;
         this.state.secondPage = false;
+        this.buttonActive = false;
+    }
+
+    handleSelectProduct(event){
+        let chosenProduct = event.detail;
+        if(chosenProduct.Id==="dummyId"){ return;}
+        this.buttonActive = true;
+        this.selectedProduct = chosenProduct;
     }
 }
