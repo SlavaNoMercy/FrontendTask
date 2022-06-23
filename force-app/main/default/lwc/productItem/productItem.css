@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.element.selected {
+    background-color: rgb(164, 185, 255);
+}
+
 .element-title {
     font-size: 16px;
     padding-top: 19px;
@@ -30,11 +34,14 @@
 
 .element-message {
     /*display: none;*/
-    background-color: aliceblue;
     display: block;
 }
 
 .element:hover {
     background-color: #dddddd;
     cursor: pointer;
+}
+
+element.selected:hover {
+    background-color: rgb(146, 116, 216);
 }

@@ -1,13 +1,28 @@
 <template>
-    <div class="element" onclick={selectProduct}>
-        <h2 class="element-title">
-            {product.title}
-        </h2>
-        <p data-id="symbol" class="element-symbol">
-            {product.symbol}
-        </p>
-        <p data-id="message" class="element-message-hide">
-            {product.message}
-        </p>
-    </div>
+    <template if:false={isSelected}>
+        <div class="element" onclick={selectProduct}>
+            <h2 class="element-title">
+                {product.title}
+            </h2>
+            <p data-id="symbol" class="element-symbol">
+                {product.symbol}
+            </p>
+            <p data-id="message" class="element-message-hide">
+                {product.message}
+            </p>
+        </div>
+    </template>
+    <template if:true={isSelected}>
+        <div class="element selected">
+            <h2 class="element-title">
+                {product.title}
+            </h2>
+            <p data-id="symbol" class="element-symbol-hide">
+                {product.symbol}
+            </p>
+            <p data-id="message" class="element-message">
+                {product.message}
+            </p>
+        </div>
+    </template>
 </template>
