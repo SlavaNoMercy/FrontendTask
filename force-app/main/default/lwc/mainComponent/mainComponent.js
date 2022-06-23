@@ -5,6 +5,7 @@ export default class MainComponent extends LightningElement {
         firstPage:true,
         secondPage:false
     }
+    @track buttonActive = false;
 
     handleNextPageEvent(){
         this.state.firstPage = false;

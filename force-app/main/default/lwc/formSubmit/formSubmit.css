@@ -31,10 +31,18 @@
 
 .ic1 {
   margin-top: 20px;
+  width: 32%;
+  margin-right: 30px;
+  display: inline-block;
 }
 
 .ic2 {
   margin-top: 20px;
+}
+
+.inline-second-item {
+  width: 62%;
+  margin-right: 0;
 }
 
 .input {
@@ -50,7 +58,7 @@
   width: 100%;
 }
 
-.cut {
+/* .cut {
   background-color: #ffffff;
   border-radius: 10px;
   height: 20px;
@@ -64,7 +72,7 @@
 
 .cut-short {
   width: 50px;
-}
+} */
 
 .input:focus ~ .cut,
 .input:not(:placeholder-shown) ~ .cut {
@@ -85,32 +93,18 @@
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-30px) translateX(10px) scale(0.75);
+  transform: translateY(-20px) translateX(10px) scale(0.75);
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
   color: #808097;
 }
 
+input:focus {
+  background-color: #ffffff;
+  border: 1px solid rgb(161, 145, 255);
+}
+
 .input:focus ~ .placeholder {
   color: #000;
-}
-
-.submit {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  cursor: pointer;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 38px;
-  outline: 0;
-  text-align: center;
-  width: 100%;
-}
-
-.submit:active {
-  background-color: #06b;
 }

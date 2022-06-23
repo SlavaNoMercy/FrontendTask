@@ -16,9 +16,16 @@
     </template>
   </div>
   <template if:true={state.firstPage}>
-    <div class="next-button">
-      <button class="button" onclick={handleNextPageEvent}>Next</button>
-    </div>
+    <template if:false={buttonActive}>
+      <div class="next-button">
+        <button disabled class="button">Next</button>
+      </div>
+    </template>
+    <template if:true={buttonActive}>
+      <div class="next-button">
+        <button class="button button-active" onclick={handleNextPageEvent}>Next</button>
+      </div>
+    </template>
   </template>
   <template if:true={state.secondPage}>
     <div class="component-container">

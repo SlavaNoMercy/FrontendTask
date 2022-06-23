@@ -9,24 +9,18 @@ export default class ProductSelection extends LightningElement {
       title: "GLOBAL COMPANY PAYMENT SYSTEM",
       symbol: "$",
       message: "3q",
-      symbolcls: true,
-      messagecls: false
     },
     {
       Id: "2ndProduct",
       title: "GLOBAL COMPANY MAILING SYSTEM",
       symbol: "@",
       message: "3w",
-      symbolcls: true,
-      messagecls: false
     },
     {
       Id: "3rdProduct",
       title: "GLOBAL COMPANY INDEX SYSTEM",
       symbol: "#",
       message: "3e",
-      symbolcls: true,
-      messagecls: false
     }
   ];
   

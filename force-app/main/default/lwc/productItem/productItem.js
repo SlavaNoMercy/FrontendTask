@@ -5,15 +5,8 @@ export default class ProductItem extends LightningElement {
 
     selectProduct(){
         const selectEvent = new CustomEvent('select', {
-            detail: this.product.Id
+            detail: this.product
         });
-        // Fire the custom event
         this.dispatchEvent(selectEvent);
-        this.template.querySelector(['data-id="symbol"']).className('element-symbol-hide');
-        //symbol.remove('element-symbol');
-        //symbol.add('element-symbol-hide');
-        this.template.querySelector(['data-id="message"']).className('element-message');
-        //message.remove('element-message-hide');
-        //message.add('element-message');
     }
 }
