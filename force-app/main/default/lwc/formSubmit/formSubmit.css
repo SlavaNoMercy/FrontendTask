@@ -133,3 +133,16 @@ input:focus {
   padding: 10px 14px 10px;
   width: 32%;
 }
+
+.input-container.ic2.selector-container {
+  background-color: #f6f6f6;
+  border-radius: 35px;
+  border: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 10px 14px 10px;
+  width: 100%;
+}

@@ -7,19 +7,35 @@ export default class ProductSelection extends LightningElement {
       Id: "1stProduct",
       title: "GLOBAL COMPANY PAYMENT SYSTEM",
       symbol: "$",
-      message: "3q"
+      message: "3q",
+      caseTitles: [
+        "Payment",
+        "Connection",
+        "Other"
+      ]
     },
     {
       Id: "2ndProduct",
       title: "GLOBAL COMPANY MAILING SYSTEM",
       symbol: "@",
-      message: "3w"
+      message: "3w",
+      caseTitles: [
+        "Mailing",
+        "Connection",
+        "Other"
+      ]
     },
     {
       Id: "3rdProduct",
       title: "GLOBAL COMPANY INDEX SYSTEM",
       symbol: "#",
-      message: "3e"
+      message: "3e",
+      caseTitles: [
+        "Indexing",
+        "Connection",
+        "query in loop(x2)",
+        "Other"
+      ]
     }
   ];
 

@@ -5,7 +5,7 @@
         <div class="status-element">
           <p>PRODUCT</p>
         </div>
-        <div class="status-element">
+        <div class="status-element next">
           <p>SUBMIT</p>
         </div>
       </div>
@@ -20,7 +20,7 @@
           <p>SUBMIT</p>
         </div>
       </div>
-      <c-form-submit></c-form-submit>
+      <c-form-submit titles={selectedProduct.caseTitles}></c-form-submit>
     </template>
   </div>
   <template if:true={state.firstPage}>
