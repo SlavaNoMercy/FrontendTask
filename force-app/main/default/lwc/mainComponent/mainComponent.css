@@ -16,9 +16,9 @@
   flex-wrap: nowrap;
   border-bottom: 2px solid rgb(234 234 234);
   width: 873px;
-  margin-left: -11px;
+  margin-left: -2px;
   position: absolute;
-  height: 50px;
+  height: 51px;
 }
 
 .status-element {
@@ -28,6 +28,10 @@
   margin-left: 70px;
   margin-right: 50px;
   font-size: smaller;
+}
+
+.status-element.next {
+  left: 200px;
 }
 
 .next-button {

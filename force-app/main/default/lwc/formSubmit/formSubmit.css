@@ -5,6 +5,7 @@
   padding: 20px;
   width: 610px;
   margin: auto;
+  margin-top: 13px;
 }
 
 .title {
@@ -20,7 +21,6 @@
   font-family: sans-serif;
   font-size: 16px;
   font-weight: unset;
-  margin-top: 10px;
 }
 
 .input-container {
@@ -118,13 +118,18 @@ input:focus {
 }
 
 .input.selector {
-  appearance: none;
+  width: 90%;
 }
 
-.input-container.ic1::after {
-  content: "\142F";
-  position: absolute;
-  top: 17px;
-  font-size: 13px;
-  right: 25px;
+.input-container.ic1.selector-container {
+  background-color: #f6f6f6;
+  border-radius: 35px;
+  border: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 10px 14px 10px;
+  width: 32%;
 }
