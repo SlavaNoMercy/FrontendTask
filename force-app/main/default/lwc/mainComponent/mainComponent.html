@@ -1,29 +1,37 @@
 <template>
   <div class="component-container">
-    <div class="status-bar">
-      <div class="status-element" id="#product">
-        <p>Product</p>
-      </div>
-      <div class="status-element" id="#submit">
-        <p>Submit</p>
-      </div>
-    </div>
     <template if:true={state.firstPage}>
+      <div class="status-bar">
+        <div class="status-element">
+          <p>PRODUCT</p>
+        </div>
+        <div class="status-element">
+          <p>SUBMIT</p>
+        </div>
+      </div>
       <c-product-selection></c-product-selection>
     </template>
     <template if:true={state.secondPage}>
+      <div class="status-bar">
+        <div class="status-element passed">
+          <p>PRODUCT</p>
+        </div>
+        <div class="status-element">
+          <p>SUBMIT</p>
+        </div>
+      </div>
       <c-form-submit></c-form-submit>
     </template>
   </div>
   <template if:true={state.firstPage}>
     <template if:false={buttonActive}>
       <div class="next-button">
-        <button disabled class="button">Next</button>
+        <button disabled class="button">NEXT</button>
       </div>
     </template>
     <template if:true={buttonActive}>
       <div class="next-button">
-        <button class="button button-active" onclick={handleNextPageEvent}>Next</button>
+        <button class="button button-active" onclick={handleNextPageEvent}>NEXT</button>
       </div>
     </template>
   </template>
@@ -33,10 +41,10 @@
     </div>
     <div class="component-container">
       <div class="prev-button">
-        <button class="button" onclick={handlePrevPageEvent}>Previous</button>
+        <button class="button" onclick={handlePrevPageEvent}>BACK</button>
       </div>
       <div class="next-button-submit">
-        <button class="button submit">Submit</button>
+        <button class="button submit">SUBMIT</button>
       </div>
     </div>
   </template>

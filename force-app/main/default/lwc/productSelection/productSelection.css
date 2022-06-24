@@ -1,3 +1,19 @@
+.product-select-header {
+  margin: auto;
+  margin-top: 90px;
+  width: 65%;
+}
+
+.header-title {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.header-text {
+  color: #8b8b8b;
+  font-size: 15px;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;

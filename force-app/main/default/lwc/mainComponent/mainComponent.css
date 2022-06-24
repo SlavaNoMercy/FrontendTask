@@ -4,24 +4,30 @@
 
 .component-container {
   max-width: 900px;
-  padding: 10px;
   margin: auto;
   margin-top: 0px;
   box-shadow: 0px 0px 800px #f5f5f5;
+  padding-top: 10px;
 }
 
 .status-bar {
   max-width: 900px;
   display: flex;
   flex-wrap: nowrap;
-  border-bottom: 2px solid rgb(184, 184, 184);
+  border-bottom: 2px solid rgb(234 234 234);
+  width: 873px;
+  margin-left: -11px;
+  position: absolute;
+  height: 50px;
 }
 
 .status-element {
   display: flex;
-  border-bottom: 3px solid #b3b3ff;
-  padding: 10px;
-  margin-left: 75px;
+  border-bottom: 4px solid #b3b3ff;
+  padding: 14px;
+  margin-left: 70px;
+  margin-right: 50px;
+  font-size: smaller;
 }
 
 .next-button {
@@ -57,9 +63,13 @@
 
 .next-button-submit {
   width: 50%;
-  float:right;
+  float: right;
 }
 
 .button-active {
   background-color: #b3b3ff;
+}
+
+.status-element.passed {
+  border-color: greenyellow;
 }
