@@ -7,10 +7,10 @@
     </div>
     <div class="input-container ic1 selector-container">
       <select id="title" name="title" class="input selector">
-        <template for:each={titles} for:item="title">
-          <option key={title} value={title}>
-              {title}</option>
-        </template>
+        <option value="mr">Mr.</option>
+        <option value="ms">Ms.</option>
+        <option value="mrs">Mrs.</option>
+        <option value="dr">Dr.</option>
       </select>
       <!-- <input id="title" class="input" type="text" placeholder=" " /> -->
       <span class="required-field">&#128308;</span>
@@ -42,14 +42,14 @@
     </div>
     <div class="input-container ic2 selector-container">
       <select id="companyType" name="companyType" class="input selector">
-        <option value="">Prospecting</option>
-        <option value="">Customer-Direct</option>
-        <option value="">Customer-Channel</option>
-        <option value="">Channel Partner/Reseller</option>
-        <option value="">Installation Partner</option>
-        <option value="">Technology Partner</option>
-        <option value="">Other</option>
-        <option value="">Customer</option>
+        <option value="prospecting">Prospecting</option>
+        <option value="customerDirect">Customer-Direct</option>
+        <option value="customerChannel">Customer-Channel</option>
+        <option value="channelPartnerReseller">Channel Partner/Reseller</option>
+        <option value="installationPartner">Installation Partner</option>
+        <option value="technologyPartner">Technology Partner</option>
+        <option value="other">Other</option>
+        <option value="customer">Customer</option>
         <option value="pending">Pending</option>
       </select>
       <!-- <span class="required-field">&#128308;</span> -->

@@ -1,19 +1,55 @@
 <template>
-  <div class="container">
-    <div class="header">
-      <input class="side-menu" type="checkbox" id="side-menu" />
-      <label class="hamb" for="side-menu">
+  <div style="display: flex; flex-wrap:nowrap;">
+    <template if:false={buttonClicked}>
+      <div class="container">
+        <div class="header">
+          <!-- <div class={menuClass} onclick={handleToggleClick}>
+          <span class="hamb-line"></span>
+          <span class="hamb-line"></span>
+          <span class="hamb-line"></span>
+        </div> -->
+          <nav class="nav">
+            <ul class="menu">
+              <li><a href="#">ABOUT US</a></li>
+              <li><a href="#">LOCATIONS</a></li>
+              <li><a href="#">INFO</a></li>
+              <li><a href="#">PRICING</a></li>
+              <li><a href="#">CONTACTS</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </template>
+    <template if:true={buttonClicked}>
+      <div class="alter-header">
+        <div class="alter-menu">
+          <div class="alter-menu-element">
+            <div onclick={handleToggleClick}>ABOUT US</div>
+          </div>
+          <div class="alter-menu-element">
+            <div onclick={handleToggleClick}>LOCATIONS</div>
+          </div>
+          <div class="alter-menu-element">
+            <div onclick={handleToggleClick}>INFO</div>
+          </div>
+          <div class="alter-menu-element">
+            <div onclick={handleToggleClick}>PRICING</div>
+          </div>
+          <div class="alter-menu-element">
+            <div onclick={handleToggleClick}>CONTACTS</div>
+          </div>
+        </div>
+        <!-- <div class={menuClass} onclick={handleToggleClick}>
         <span class="hamb-line"></span>
-      </label>
-      <nav class="nav">
-        <ul class="menu">
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">LOCATIONS</a></li>
-          <li><a href="#">INFO</a></li>
-          <li><a href="#">PRICING</a></li>
-          <li><a href="#">CONTACTS</a></li>
-        </ul>
-      </nav>
+        <span class="hamb-line"></span>
+        <span class="hamb-line"></span>
+      </div> -->
+      </div>
+    </template>
+    <div class={menuClass} onclick={handleToggleClick}>
+      <span class="hamb-line"></span>
+      <span class="hamb-line"></span>
+      <span class="hamb-line"></span>
     </div>
   </div>
   <span class="line"></span>
