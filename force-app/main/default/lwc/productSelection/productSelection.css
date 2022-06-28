@@ -43,3 +43,20 @@
   display: inline-block;
   font-size: 16px;
 }
+
+@media (max-width: 768px) {
+  .product-select-header {
+    margin-top: 9px;
+    width: 100%;
+    padding-top: 67px;
+    padding-left: 21px;
+  }
+  .header-text {
+    color: #8b8b8b;
+    font-size: 20px;
+  }
+  .header-title {
+    font-weight: bold;
+    font-size: 31px;
+  }
+}

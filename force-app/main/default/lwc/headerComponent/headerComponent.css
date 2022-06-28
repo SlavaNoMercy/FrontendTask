@@ -51,7 +51,7 @@
 .hamb {
   cursor: pointer;
   float: right;
-  padding: 40px 35px;
+  padding: 30px 35px;
   border-left: 2px solid lightgray;
 }
 
@@ -77,18 +77,19 @@
 
 .alter-menu-element {
   height: 100px;
+  padding: 30px;
   width: 100%;
 }
 
-.hamb.active .hamb-line:nth-child(1){
+.hamb.active .hamb-line:nth-child(1) {
   transform: translateY(4px) rotate(45deg);
 }
 
-.hamb.active .hamb-line:nth-child(2){
+.hamb.active .hamb-line:nth-child(2) {
   opacity: 0;
 }
 
-.hamb.active .hamb-line:nth-child(3){
+.hamb.active .hamb-line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
 

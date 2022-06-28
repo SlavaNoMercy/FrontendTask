@@ -16,3 +16,15 @@
   color: inherit;
   padding: 50px 5px 5px 5px;
 }
+
+@media (max-width: 768px) {
+  .row {
+    text-align: center;
+    color: inherit;
+    padding: 50px 5px 5px 5px;
+    font-size: smaller;
+  }
+  .copyright {
+    font-size: 15px;
+  }
+}

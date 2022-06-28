@@ -3,24 +3,25 @@
   color: black;
   border-radius: 35px;
   width: 422px;
-  height: 218px;
+  height: 200px;
   margin: 0px 14px 0px 14px;
   text-align: center;
 }
 
 .element.selected {
-  background-color: rgb(164, 185, 255);
+  background-color: rgb(168 188 255);
 }
 
 .element-title {
-  font-size: 16px;
+  font-size: 22px;
   padding-top: 19px;
   font-weight: bold;
 }
 
 .element-symbol {
-  font-size: 76px;
-  /*display: none;*/
+  font-size: 104px;
+  bottom: 22px;
+  position: relative;
 }
 
 .element-symbol-hide {
@@ -43,5 +44,25 @@
 }
 
 .element.selected:hover {
-  background-color: rgb(118, 121, 255);
+  background-color: rgb(193 195 255);
+}
+
+@media (max-width: 768px) {
+  .element {
+    background-color: #cccccc;
+    color: black;
+    border-radius: 35px;
+    width: 365px;
+    height: 205px;
+    margin: 0px 14px 0px 14px;
+    text-align: center;
+  }
+  .element-title {
+    padding-top: 0px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .element-symbol {
+    font-size: 88px;
+  }
 }
