@@ -6,42 +6,42 @@
       decision in minutes.
     </div>
     <div class="input-container ic1 selector-container">
-      <select id="title" name="title" class="input selector">
+      <select id="title" name="title" class="input selector" required>
         <option value="mr">Mr.</option>
         <option value="ms">Ms.</option>
         <option value="mrs">Mrs.</option>
         <option value="dr">Dr.</option>
       </select>
-      <!-- <input id="title" class="input" type="text" placeholder=" " /> -->
       <span class="required-field">&#128308;</span>
-      <!-- <div class="cut"></div> -->
-      <label for="title" class="placeholder">Title</label
-      ><!-- picklist -->
+      <label for="title" class="placeholder">Title</label>
+      <label for="title" class="help-message">Select correct title</label>
     </div>
     <div class="input-container ic1 inline-second-item">
-      <input id="firstname" class="input" type="text" placeholder=" " />
+      <input id="firstname" class="input" type="text" placeholder=" " required pattern="/^[a-z ,.'-]+$/i"/>
       <span class="required-field">&#128308;</span>
-      <!-- <div class="cut"></div> -->
       <label for="firstname" class="placeholder">First name</label>
+      <label for="firstname" class="help-message">Please enter your first name</label>
     </div>
     <div class="input-container ic2">
-      <input id="lastname" class="input" type="text" placeholder=" " />
+      <input id="lastname" class="input" type="text" placeholder=" " required pattern="/^[a-z ,.'-]+$/i"/>
       <span class="required-field">&#128308;</span>
-      <!-- <div class="cut"></div> -->
       <label for="lastname" class="placeholder">Second name</label>
+      <label for="lastname" class="help-message">Please enter your last name</label>
     </div>
     <div class="input-container ic2">
-      <input id="email" class="input" type="text" placeholder=" " />
+      <input id="email" class="input" type="text" placeholder=" " required pattern="/^[\w-\.]+@([\w-]+[A-Za-z]+[\w-]+\.)+[\w-]{2,4}$/g"/>
       <span class="required-field">&#128308;</span>
       <label for="email" class="placeholder">Email address</label>
+      <label for="email" class="help-message">Please enter your email address</label>
     </div>
     <div class="input-container ic2">
-      <input id="phone" class="input" type="text" placeholder=" " />
+      <input id="phone" class="input" type="text" placeholder=" " required pattern=""/>
       <span class="required-field">&#128308;</span>
       <label for="phone" class="placeholder">Preffered Contact Number</label>
+      <label for="phone" class="help-message">Please enter your phone number</label>
     </div>
     <div class="input-container ic2 selector-container">
-      <select id="companyType" name="companyType" class="input selector">
+      <select id="companyType" name="companyType" class="input selector" required>
         <option value="prospecting">Prospecting</option>
         <option value="customerDirect">Customer-Direct</option>
         <option value="customerChannel">Customer-Channel</option>
@@ -52,19 +52,20 @@
         <option value="customer">Customer</option>
         <option value="pending">Pending</option>
       </select>
-      <!-- <span class="required-field">&#128308;</span> -->
       <label for="companyType" class="placeholder">Company Type</label>
-      <!-- picklist -->
     </div>
     <div class="input-container ic2">
-      <input id="company" class="input" type="text" placeholder=" " />
+      <input id="company" class="input" type="text" placeholder=" " required pattern="/^[a-z ,.'-]+$/i"/>
       <span class="required-field">&#128308;</span>
       <label for="company" class="placeholder">Company</label>
+      <label for="company" class="help-message">Please enter your company name</label>
     </div>
-    <div class="input-container ic2">
-      <input id="description" class="input" type="text" placeholder=" " />
+    <div class="input-container ic2 description-area">
+      <textarea class="input description" placeholder=" " required rows="20"></textarea>
+      <!-- <input id="description" class="input" type="text" placeholder=" " required/> -->
       <span class="required-field">&#128308;</span>
-      <label for="description" class="placeholder">Case content</label>
+      <label for="description" class="placeholder textarea">Case content</label>
+      <label for="description" class="help-message">Please describe your question</label>
     </div>
   </div>
 </template>

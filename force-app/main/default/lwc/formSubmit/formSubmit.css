@@ -80,12 +80,12 @@
 
 .cut-short {
   width: 50px;
-} */
+} 
 
 .input:focus ~ .cut,
 .input:not(:placeholder-shown) ~ .cut {
   transform: translateY(8px);
-}
+} */
 
 .placeholder {
   color: #65657b;
@@ -99,6 +99,15 @@
   top: 20px;
 }
 
+.help-message {
+  position: absolute;
+  color: grey;
+  opacity: 0;
+  left: 19px;
+  bottom: 15px;
+  font-size: 12px;
+}
+
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
   transform: translateY(-20px) translateX(10px) scale(0.75);
@@ -106,6 +115,20 @@
 
 .input:not(:placeholder-shown) ~ .placeholder {
   color: #808097;
+}
+
+.input:focus ~ .placeholder.textarea,
+.input:not(:placeholder-shown) ~ .placeholder.textarea {
+  transform: translateY(-120px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder.textarea {
+  color: #808097;
+}
+
+.input:focus ~ .help-message {
+  transform: translateY(32px);
+  opacity: 1;
 }
 
 input:focus {
@@ -119,6 +142,19 @@ input:focus {
 
 .input.selector {
   width: 96%;
+}
+
+.input.description {
+  padding-top: 15px;
+  max-width: 353px;
+  min-width: 353px;
+  min-height: 292px;
+  width: 361px;
+}
+
+.description-area {
+  min-height: 300px;
+  height: fit-content;
 }
 
 .input-container.ic1.selector-container {
@@ -147,6 +183,10 @@ input:focus {
   width: 100%;
 }
 
+label.placeholder.textarea {
+  top: 120px;
+}
+
 @media (max-width: 768px) {
   .input-container.ic1.selector-container {
     width: 100%;
@@ -172,5 +212,16 @@ input:focus {
     font-family: sans-serif;
     font-size: 19px;
     font-weight: unset;
+  }
+  .input.description {
+    padding-top: 15px;
+    max-width: 353px;
+    min-width: 353px;
+    min-height: 292px;
+    width: 361px;
+  }
+  .description-area {
+    min-height: 300px;
+    height: fit-content;
   }
 }
