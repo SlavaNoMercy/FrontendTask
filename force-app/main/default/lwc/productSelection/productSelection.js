@@ -7,40 +7,23 @@ export default class ProductSelection extends LightningElement {
       Id: "1stProduct",
       title: "GLOBAL COMPANY PAYMENT SYSTEM",
       symbol: "$",
-      message: "3q",
-      caseTitles: [
-        "Payment",
-        "Connection",
-        "Other"
-      ]
+      message: "3q"
     },
     {
       Id: "2ndProduct",
       title: "GLOBAL COMPANY MAILING SYSTEM",
       symbol: "@",
-      message: "3w",
-      caseTitles: [
-        "Mailing",
-        "Connection",
-        "Other"
-      ]
+      message: "3w"
     },
     {
       Id: "3rdProduct",
       title: "GLOBAL COMPANY INDEX SYSTEM",
       symbol: "#",
-      message: "3e",
-      caseTitles: [
-        "Indexing",
-        "Connection",
-        "query in loop(x2)",
-        "Other"
-      ]
+      message: "3e"
     }
   ];
 
-  constructor() {
-    super();
+  connectedCallback() {
     this.template.addEventListener("select", this.handleSelect.bind(this));
     this.template.addEventListener("unselect", this.handleUnselect.bind(this));
   }

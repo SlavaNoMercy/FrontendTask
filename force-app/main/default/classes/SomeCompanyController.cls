@@ -29,4 +29,14 @@ public without sharing class SomeCompanyController {
 
     return jsonGenerator.getAsString();
   }
+
+  @AuraEnabled
+  public static string createCase(String caseJSON){
+    try {
+      
+      return 'Success';
+    } catch (Exception e) {
+      return e.getMessage();
+    }
+  }
 }
