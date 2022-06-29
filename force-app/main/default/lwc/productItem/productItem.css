@@ -2,7 +2,7 @@
   background-color: #cccccc;
   color: black;
   border-radius: 35px;
-  width: 422px;
+  width: 405px;
   height: 200px;
   margin: 0px 14px 0px 14px;
   text-align: center;
@@ -19,9 +19,10 @@
 }
 
 .element-symbol {
-  font-size: 104px;
-  bottom: 22px;
+  font-size: 80px;
+  bottom: 15px;
   position: relative;
+  font-family: Roboto Slab, sans-serif;
 }
 
 .element-symbol-hide {
@@ -52,8 +53,8 @@
     background-color: #cccccc;
     color: black;
     border-radius: 35px;
-    width: 365px;
-    height: 205px;
+    width: 340px;
+    height: 185px;
     margin: 0px 14px 0px 14px;
     text-align: center;
   }
@@ -63,6 +64,15 @@
     font-weight: bold;
   }
   .element-symbol {
-    font-size: 88px;
+    font-size: 70px;
   }
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v23/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4Omb2Rj.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

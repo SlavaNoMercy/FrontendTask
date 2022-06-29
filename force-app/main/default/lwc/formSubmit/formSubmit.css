@@ -146,10 +146,10 @@ input:focus {
 
 .input.description {
   padding-top: 15px;
-  max-width: 353px;
-  min-width: 353px;
+  max-width: 570px;
+  min-width: 570px;
   min-height: 292px;
-  width: 361px;
+  height: 300px;
 }
 
 .description-area {
@@ -187,6 +187,19 @@ label.placeholder.textarea {
   top: 120px;
 }
 
+.button-submit {
+  background-color: #b3b3ff;
+  border: none;
+  border-radius: 30px;
+  color: rgb(27, 27, 27);
+  padding: 13px 90px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 50px;
+}
+
 @media (max-width: 768px) {
   .input-container.ic1.selector-container {
     width: 100%;
@@ -215,10 +228,10 @@ label.placeholder.textarea {
   }
   .input.description {
     padding-top: 15px;
-    max-width: 353px;
-    min-width: 353px;
+    max-width: 315px;
+    min-width: 315px;
     min-height: 292px;
-    width: 361px;
+    height: 300px;
   }
   .description-area {
     min-height: 300px;
