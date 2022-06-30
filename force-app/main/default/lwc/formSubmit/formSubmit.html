@@ -1,16 +1,17 @@
 <template>
-  <form class="form" onsubmit={handleSubmit}>
+  <form class="form" onsubmit={sendCase}>
     <div class="title">Submit Case</div>
     <div class="subtitle">
       It's easy to submit your case. Simply fill the form bellow and get a
       decision in minutes.
     </div>
     <div class="input-container ic1 selector-container">
-      <select id="title" name="title" class="input selector" required>
-        <option value="mr">Mr.</option>
-        <option value="ms">Ms.</option>
-        <option value="mrs">Mrs.</option>
-        <option value="dr">Dr.</option>
+      <select id="title" name="title" class="input selector" onchange={setCaseTitle} required>
+        <option disabled selected value> -- None -- </option>
+        <option value="Mr.">Mr.</option>
+        <option value="Ms.">Ms.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Dr.">Dr.</option>
       </select>
       <span class="required-field">&#128308;</span>
       <label for="title" class="placeholder">Title</label>
@@ -18,8 +19,7 @@
     </div>
     <div class="input-container ic1 inline-second-item">
       <input id="firstname"
-        value={newcase.firstname}
-        onchange={caseObj}
+        onchange={setCaseFirstName}
         class="input"
         type="text"
         placeholder=" "
@@ -31,7 +31,7 @@
     </div>
     <div class="input-container ic2">
       <input id="lastname"
-        value={newcase.lastname}
+        onchange={setCaseSecondName}
         class="input"
         type="text"
         placeholder=" "
@@ -43,22 +43,23 @@
     </div>
     <div class="input-container ic2">
       <input id="email"
-        value={newcase.email}
+        onchange={setCaseEmail}
         class="input"
         type="text"
         placeholder=" "
         required
-        pattern="^[\w-\.]+@([\w-]+[A-Za-z]+[\w-]+\.)+[\w-]{2,4}$"/>
+        pattern="^[[A-Za-z0-9]%-\.]+@([[A-Za-z0-9]-]+[A-Za-z]+[[A-Za-z0-9]-]+\.)+[[A-Za-z0-9]-]{2,4}$"/>
       <span class="required-field">&#128308;</span>
       <label for="email" class="placeholder">Email address</label>
       <label for="email" class="help-message">Please enter your email address</label>
     </div>
     <div class="input-container ic2">
       <input id="phone"
-        value={newcase.phone}
+        onchange={setCasePhone}
         class="input"
         type="text"
         placeholder=" "
+        pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
         required/>
       <span class="required-field">&#128308;</span>
       <label for="phone" class="placeholder">Preffered Contact Number</label>
@@ -66,23 +67,25 @@
     </div>
     <div class="input-container ic2 selector-container">
       <select id="companyType"
+        onchange={setCaseCompanyType}
         name="companyType"
         class="input selector">
-        <option value="prospecting">Prospecting</option>
-        <option value="customerDirect">Customer-Direct</option>
-        <option value="customerChannel">Customer-Channel</option>
-        <option value="channelPartnerReseller">Channel Partner/Reseller</option>
-        <option value="installationPartner">Installation Partner</option>
-        <option value="technologyPartner">Technology Partner</option>
-        <option value="other">Other</option>
-        <option value="customer">Customer</option>
-        <option value="pending">Pending</option>
+        <option disabled selected value> -- None -- </option>
+        <option value="Prospecting">Prospecting</option>
+        <option value="Customer-Direct">Customer-Direct</option>
+        <option value="Customer-Channel">Customer-Channel</option>
+        <option value="Channel Partner/Reseller">Channel Partner/Reseller</option>
+        <option value="Installation Partner">Installation Partner</option>
+        <option value="Technology Partner">Technology Partner</option>
+        <option value="Other">Other</option>
+        <option value="Customer">Customer</option>
+        <option value="Pending">Pending</option>
       </select>
       <label for="companyType" class="placeholder">Company Type</label>
     </div>
     <div class="input-container ic2">
       <input id="company"
-        value={newcase.company}
+        onchange={setCaseCompany}
         class="input"
         type="text"
         placeholder=" "
@@ -93,11 +96,12 @@
       <label for="company" class="help-message">Please enter your company name</label>
     </div>
     <div class="input-container ic2 description-area">
-      <textarea class="input description"
-        onchange={caseObj}       
+      <textarea id="description"
+        class="input description"
+        onchange={setCaseDescription}     
         placeholder=" "
         required
-        rows="20">{newcase.description}
+        rows="20">
       </textarea>
       <span class="required-field">&#128308;</span>
       <label for="description" class="placeholder textarea">Case content</label>
@@ -105,7 +109,7 @@
     </div>
     <div style="position: relative; width: 610px; display: inline-block;">
       <div style="top: 72px; left: 497px; position: absolute">
-        <button type="submit" onclick={sendCase} class="button-submit">SUBMIT</button>
+        <button type="submit" class="button-submit">SUBMIT</button>
       </div>
     </div>
   </form>
