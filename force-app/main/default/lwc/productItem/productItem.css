@@ -41,7 +41,7 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -69,7 +69,7 @@
   }
   .element-title {
     padding-top: 0px;
-    font-size: 37px;
+    font-size: 30px;
     font-weight: bold;
     line-height: 37px;
   }
