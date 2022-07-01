@@ -286,6 +286,7 @@ label.placeholder.textarea {
     top: 258px;
     left: 159px;
     position: absolute;
+    width: 180px;
   }
   .button-submit {
     background-color: #9EAEFF;
