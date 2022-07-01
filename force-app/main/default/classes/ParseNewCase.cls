@@ -1,4 +1,4 @@
-public class ParseNewCase{
+public without sharing class ParseNewCase{
     public String Origin;	
     public String SuppliedName;	
     public String SuppliedEmail;
@@ -9,6 +9,7 @@ public class ParseNewCase{
     public String ContactId;
     public String AccountId;
   
+    @AuraEnabled(cacheable=true)
     public static ParseNewCase parse(String json){
       return (ParseNewCase) System.JSON.deserialize(json, ParseNewCase.class);
     }

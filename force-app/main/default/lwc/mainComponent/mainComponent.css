@@ -81,7 +81,7 @@
   border-color: rgb(12, 165, 38);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .status-bar {
     max-width: 357px;
     display: flex;

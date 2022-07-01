@@ -48,7 +48,7 @@
   background-color: rgb(193 195 255);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .element {
     background-color: #cccccc;
     color: black;

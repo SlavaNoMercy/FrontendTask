@@ -44,7 +44,7 @@
   font-size: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .product-select-header {
     margin-top: 9px;
     width: 100%;

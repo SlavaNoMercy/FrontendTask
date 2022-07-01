@@ -200,7 +200,7 @@ label.placeholder.textarea {
   height: 50px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .input-container.ic1.selector-container {
     width: 100%;
   }

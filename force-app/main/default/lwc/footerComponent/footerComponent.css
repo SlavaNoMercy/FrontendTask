@@ -17,7 +17,7 @@
   padding: 50px 5px 5px 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .row {
     text-align: center;
     color: inherit;
