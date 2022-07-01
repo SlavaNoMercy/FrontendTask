@@ -1,6 +1,6 @@
 <template>
   <form class="form" onsubmit={sendCase}>
-    <div class="title">Submit Case</div>
+    <h3 class="title">Submit Case</h3>
     <div class="subtitle">
       It's easy to submit your case. Simply fill the form bellow and get a
       decision in minutes.
@@ -20,7 +20,7 @@
     <div class="input-container ic1 inline-second-item">
       <input id="firstname"
         onchange={setCaseFirstName}
-        class="input"
+        class="input firstname"
         type="text"
         placeholder=" "
         required
@@ -28,11 +28,17 @@
       <span class="required-field">&#128308;</span>
       <label for="firstname" class="placeholder">First name</label>
       <label for="firstname" class="help-message">Please enter your first name</label>
+      <div class="firstname-check">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
+          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
     </div>
     <div class="input-container ic2">
       <input id="lastname"
         onchange={setCaseSecondName}
-        class="input"
+        class="input lastname"
         type="text"
         placeholder=" "
         required
@@ -40,11 +46,17 @@
       <span class="required-field">&#128308;</span>
       <label for="lastname" class="placeholder">Second name</label>
       <label for="lastname" class="help-message">Please enter your last name</label>
+      <div class="lastname-check">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
+          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
     </div>
     <div class="input-container ic2">
       <input id="email"
         onchange={setCaseEmail}
-        class="input"
+        class="input email"
         type="text"
         placeholder=" "
         required
@@ -52,11 +64,17 @@
       <span class="required-field">&#128308;</span>
       <label for="email" class="placeholder">Email address</label>
       <label for="email" class="help-message">Please enter your email address</label>
+      <div class="email-check">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
+          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
     </div>
     <div class="input-container ic2">
       <input id="phone"
         onchange={setCasePhone}
-        class="input"
+        class="input phone"
         type="text"
         placeholder=" "
         pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
@@ -64,6 +82,12 @@
       <span class="required-field">&#128308;</span>
       <label for="phone" class="placeholder">Preffered Contact Number</label>
       <label for="phone" class="help-message">Please enter your phone number</label>
+      <div class="phone-check">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
+          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
     </div>
     <div class="input-container ic2 selector-container">
       <select id="companyType"
@@ -86,7 +110,7 @@
     <div class="input-container ic2">
       <input id="company"
         onchange={setCaseCompany}
-        class="input"
+        class="input company"
         type="text"
         placeholder=" "
         required
@@ -94,6 +118,12 @@
       <span class="required-field">&#128308;</span>
       <label for="company" class="placeholder">Company</label>
       <label for="company" class="help-message">Please enter your company name</label>
+      <div class="company-check">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
+          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
     </div>
     <div class="input-container ic2 description-area">
       <textarea id="description"
@@ -108,7 +138,7 @@
       <label for="description" class="help-message">Please describe your question</label>
     </div>
     <div style="position: relative; width: 610px; display: inline-block;">
-      <div style="top: 72px; left: 497px; position: absolute">
+      <div class="button-wrapper">
         <button type="submit" class="button-submit">SUBMIT</button>
       </div>
     </div>

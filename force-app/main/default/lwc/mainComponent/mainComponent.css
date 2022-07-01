@@ -6,8 +6,18 @@
   max-width: 900px;
   margin: auto;
   margin-top: 0px;
-  box-shadow: 0px 0px 800px #f5f5f5;
+  box-shadow: 0px 60px 800px #f5f5f5;
   padding-top: 10px;
+  font-family: Arial;
+}
+
+.component-container.submit-info {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .status-bar {
@@ -79,6 +89,12 @@
 
 .status-element.passed {
   border-color: rgb(12, 165, 38);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #b4afb5;
+}
+
+.link-submit {
+  padding: 3px;
 }
 
 @media (max-width: 920px) {
@@ -99,9 +115,6 @@
   .status-element.next {
     left: 135px;
   }
-  .status-element.passed {
-    box-shadow: 6px 17px 13px -14px grey;
-  }
   .button {
     background-color: #cccccc;
     border: none;
@@ -113,7 +126,7 @@
     display: inline-block;
     font-size: 15px;
   }
-  .button-active{
+  .button-active {
     background-color: #a8bcff;
   }
   .component-container {
@@ -125,5 +138,8 @@
   }
   .status-element.next.mobile-disabled {
     border: none;
+  }
+  .link-submit {
+    color: #9eaeff;
   }
 }

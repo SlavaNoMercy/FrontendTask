@@ -3,28 +3,30 @@
   height: 180px;
   background-color: black;
   color: white;
-}
-
-.column {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  color: inherit;
 }
 
-.row {
+.content {
+  position: absolute;
+  width: 444px;
+  height: 46px;
+  top: 50px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 31px;
+  display: flex;
+  align-items: center;
   text-align: center;
-  color: inherit;
-  padding: 50px 5px 5px 5px;
+  color: #ffffff;
 }
 
 @media (max-width: 920px) {
-  .row {
-    text-align: center;
-    color: inherit;
-    padding: 50px 5px 5px 5px;
-    font-size: smaller;
-  }
-  .copyright {
-    font-size: 15px;
+  .content {
+    font-size: 17px;
+    justify-content: center;
+    max-width: 400px;
   }
 }

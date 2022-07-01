@@ -7,19 +7,19 @@ export default class ProductSelection extends LightningElement {
       Id: "1stProduct",
       title: "GLOBAL COMPANY PAYMENT SYSTEM",
       symbol: "$",
-      message: "3q"
+      message: "The employee and documentation, indexing system. Cases related to index errors, duplicated indexes, naming errors, index definition errors."
     },
     {
       Id: "2ndProduct",
       title: "GLOBAL COMPANY MAILING SYSTEM",
       symbol: "@",
-      message: "3w"
+      message: "The employee and documentation, indexing system. Cases related to index errors, duplicated indexes, naming errors, index definition errors."
     },
     {
       Id: "3rdProduct",
       title: "GLOBAL COMPANY INDEX SYSTEM",
       symbol: "#",
-      message: "3e"
+      message: "The employee and documentation, indexing system. Cases related to index errors, duplicated indexes, naming errors, index definition errors."
     }
   ];
 
