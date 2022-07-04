@@ -1,5 +1,5 @@
 <template>
-  <form class="form" onsubmit={sendCase}>
+  <div class="form"> <!-- onsubmit={sendCase}> -->
     <h3 class="title">Submit Case</h3>
     <div class="subtitle">
       It's easy to submit your case. Simply fill the form bellow and get a
@@ -17,7 +17,7 @@
       <label for="title" class="placeholder">Title</label>
       <label for="title" class="help-message">Select correct title</label>
     </div>
-    <div class="input-container ic1 inline-second-item">
+    <!-- <div class="input-container ic1 inline-second-item">
       <input id="firstname"
         onchange={setCaseFirstName}
         class="input firstname"
@@ -34,8 +34,17 @@
           <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       </div>
-    </div>
-    <div class="input-container ic2">
+    </div> -->
+    <template for:each={textFieldSet} for:item="textInputElement">
+      <c-input-text key={textInputElement.fieldName} 
+        fieldname={textInputElement.fieldName}
+        classname={textInputElement.className}
+        fieldnamecheck={textInputElement.fieldnamecheck}
+        requiredfield={textInputElement.requiredfield}
+        requiredfieldmark={textInputElement.requiredfieldmark}
+        regexp={textInputElement.regexp}></c-input-text>
+    </template>
+    <!-- <div class="input-container ic2">
       <input id="lastname"
         onchange={setCaseSecondName}
         class="input lastname"
@@ -52,8 +61,8 @@
           <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       </div>
-    </div>
-    <div class="input-container ic2">
+    </div> -->
+    <!-- <div class="input-container ic2">
       <input id="email"
         onchange={setCaseEmail}
         class="input email"
@@ -88,7 +97,7 @@
           <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       </div>
-    </div>
+    </div> -->
     <div class="input-container ic2 selector-container">
       <select id="companyType"
         onchange={setCaseCompanyType}
@@ -106,8 +115,8 @@
         <option value="Pending">Pending</option>
       </select>
       <label for="companyType" class="placeholder">Company Type</label>
-    </div>
-    <div class="input-container ic2">
+    </div> 
+    <!-- <div class="input-container ic2">
       <input id="company"
         onchange={setCaseCompany}
         class="input company"
@@ -124,7 +133,7 @@
           <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
       </div>
-    </div>
+    </div> -->
     <div class="input-container ic2 description-area">
       <textarea id="description"
         class="input description"
@@ -139,8 +148,8 @@
     </div>
     <div style="position: relative; width: 610px; display: inline-block;">
       <div class="button-wrapper">
-        <button type="submit" class="button-submit">SUBMIT</button>
+        <button type="submit" class="button-submit" onclick={sendCase}>SUBMIT</button>
       </div>
     </div>
-  </form>
+  </div>
 </template>

@@ -15,6 +15,49 @@ export default class FormSubmit extends LightningElement {
     description: " "
   };
 
+  textFieldSet = [
+    {
+      fieldName: "First name",
+      className: "input-container ic1 inline-second-item",
+      fieldnamecheck: "firstname-check",
+      requiredfield: true,
+      requiredfieldmark: "required-field",
+      regexp: "^[a-zA-Z ,.'-]+$"
+    },
+    {
+      fieldName: "Second name",
+      className: "input-container ic2",
+      fieldnamecheck: "secondname-check",
+      requiredfield: true,
+      requiredfieldmark: "required-field",
+      regexp: "^[a-zA-Z ,.'-]+$"
+    },
+    {
+      fieldName: "Email address",
+      className: "input-container ic2",
+      fieldnamecheck: "email-check",
+      requiredfield: true,
+      requiredfieldmark: "required-field",
+      regexp: "[a-z0-9._%+-]+@(?:[a-z0-9])+[a-z]+(?:[a-z0-9])+(\.[a-z]{2,}){1,}$"
+    },
+    {
+      fieldName: "Phone number",
+      className: "input-container ic2",
+      fieldnamecheck: "phone-check",
+      requiredfield: true,
+      requiredfieldmark: "required-field",
+      regexp: "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+    },
+    { 
+      fieldName: "Company name",
+      className: "input-container ic2",
+      fieldnamecheck: "company-check",
+      requiredfield: true,
+      requiredfieldmark: "required-field",
+      regexp: "^[a-zA-Z ,.'-]+$"
+    }
+  ];
+
   @wire(getRelatedContact, { contactEmail: "$newCase.email" })
   contact;
 
@@ -65,7 +108,11 @@ export default class FormSubmit extends LightningElement {
     return {
       Origin: "Web",
       SuppliedName:
-        this.newCase.title + ' ' + this.newCase.firstName + ' ' + this.newCase.secondName,
+        this.newCase.title +
+        " " +
+        this.newCase.firstName +
+        " " +
+        this.newCase.secondName,
       SuppliedEmail: this.newCase.email,
       SuppliedPhone: this.newCase.phone,
       SuppliedCompany: this.newCase.company,
@@ -78,7 +125,7 @@ export default class FormSubmit extends LightningElement {
 
   sendCase(event) {
     console.log(JSON.stringify(this.buildCase()));
-    createCase({ 
+    createCase({
       newCaseJSON: this.buildCase(),
       title: this.newCase.title,
       firstName: this.newCase.firstName,

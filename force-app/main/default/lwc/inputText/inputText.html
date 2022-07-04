@@ -1,0 +1,30 @@
+<template>
+  <div class={classname}>
+    <input id={fieldname}
+      onchange={setCaseField}
+      class={fieldname}
+      type="text"
+      placeholder=" "
+      required={requiredfield}
+      pattern="^[a-zA-Z ,.'-]+$"/>
+    <span class={requiredfieldmark}>&#128308;</span>
+    <label for={fieldname} class="placeholder">{fieldname}</label>
+    <label for={fieldname} class="help-message">
+      Please enter your {fieldname}
+    </label>
+    <div class={fieldnamecheck}>
+      <svg width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="20" fill="#9EAEFF" />
+        <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556"
+          stroke="#212E35"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</template>

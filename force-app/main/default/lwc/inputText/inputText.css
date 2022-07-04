@@ -1,0 +1,229 @@
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 20px;
+  width: 32%;
+  margin-right: 30px;
+  display: inline-block;
+}
+
+.ic2 {
+  margin-top: 20px;
+}
+
+.inline-second-item {
+  width: 62%;
+  margin-right: 0;
+}
+
+input {
+  background-color: #f6f6f6;
+  border-radius: 35px;
+  border: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.required-field {
+  float: right;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 6px;
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.help-message {
+  position: absolute;
+  color: grey;
+  opacity: 0;
+  left: 19px;
+  bottom: 15px;
+  font-size: 12px;
+}
+
+input:focus ~ .placeholder,
+input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-20px) translateX(10px) scale(0.75);
+}
+
+input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.description:focus {
+  background-color: #ffffff;
+  border: 1px solid #9eaeff;
+}
+
+input:focus ~ .placeholder.textarea,
+input:not(:placeholder-shown) ~ .placeholder.textarea {
+  transform: translateY(-120px) translateX(10px) scale(0.75);
+}
+
+input:not(:placeholder-shown) ~ .placeholder.textarea {
+  color: #808097;
+}
+
+input:focus ~ .help-message {
+  transform: translateY(32px);
+  opacity: 1;
+}
+
+input:focus {
+  background-color: #ffffff;
+  border: 1px solid #9eaeff;
+}
+
+input:focus ~ .placeholder {
+  color: #000;
+}
+
+.selector {
+  width: 96%;
+}
+
+.description {
+  padding-top: 15px;
+  max-width: 570px;
+  min-width: 570px;
+  min-height: 292px;
+  height: 300px;
+}
+
+.description-area {
+  min-height: 300px;
+  height: fit-content;
+}
+
+.input-container.ic1.selector-container {
+  background-color: #f6f6f6;
+  border-radius: 35px;
+  border: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 10px 14px 10px;
+  width: 32%;
+}
+
+.input-container.ic2.selector-container {
+  background-color: #f6f6f6;
+  border-radius: 35px;
+  border: 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 10px 14px 10px;
+  width: 100%;
+}
+
+label.placeholder.textarea {
+  top: 120px;
+}
+
+.firstname-check {
+  position: absolute;
+  right: 36px;
+  bottom: 5px;
+  display: none;
+}
+
+.firstname:valid ~ .firstname-check {
+  display: block;
+}
+
+.firstname.wrong-pattern {
+    border-color: red;
+}
+
+.firstname.wrong-pattern ~ .firstname-check {
+    display: none;
+}
+
+.firstname.wrong-pattern ~ .help-message {
+    color: red;
+}
+
+.secondname-check {
+  position: absolute;
+  right: 36px;
+  bottom: 5px;
+  display: none;
+}
+
+.secondname:valid ~ .secondname-check {
+  display: block;
+}
+
+.email-check {
+  position: absolute;
+  right: 36px;
+  bottom: 5px;
+  display: none;
+}
+
+.email:valid ~ .email-check {
+  display: block;
+}
+
+.phone-check {
+  position: absolute;
+  right: 36px;
+  bottom: 5px;
+  display: none;
+}
+
+.phone:valid ~ .phone-check {
+  display: block;
+}
+
+.company-check {
+  position: absolute;
+  right: 36px;
+  bottom: 5px;
+  display: none;
+}
+
+.company:valid ~ .company-check {
+  display: block;
+}
+
+@media (max-width: 920px) {
+  .input-container.ic1.selector-container {
+    width: 100%;
+  }
+  .input-container.ic1.inline-second-item {
+    border-radius: 35px;
+    border: 0;
+    color: #000;
+    font-size: 18px;
+    height: 50px;
+    outline: 0;
+    width: 100%;
+  }
+}
