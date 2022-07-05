@@ -13,7 +13,10 @@ export default class InputText extends LightningElement {
       //event.target.classList.add("wrong-pattern");
       const divCheck = this.template.querySelector('[data-id="check-mark"]');
       divCheck.classList.remove('checked');
-      return;
+    }
+    else {
+        const divCheck = this.template.querySelector('[data-id="check-mark"]');
+        divCheck.classList.add('checked');
     }
     // event.target.classList.remove("wrong-pattern");
     const setFieldVal = new CustomEvent("setfield", {
@@ -22,8 +25,6 @@ export default class InputText extends LightningElement {
       detail: { fieldName: this.fieldname, value: event.target.value }
     });
     this.dispatchEvent(setFieldVal);
-    const divCheck = this.template.querySelector('[data-id="check-mark"]');
-    divCheck.classList.add('checked');
   }
 
   @api checkValidity(){
