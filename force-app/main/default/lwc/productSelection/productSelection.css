@@ -52,11 +52,27 @@
     padding-left: 21px;
   }
   .header-text {
-    color: #8b8b8b;
-    font-size: 20px;
+    color: #80828A;
+    width: 269px;
+    height: 50px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
   }
   .header-title {
-    font-weight: bold;
-    font-size: 31px;
+    color: #212E35;
+    width: 260px;
+    height: 17px;;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
   }
 }

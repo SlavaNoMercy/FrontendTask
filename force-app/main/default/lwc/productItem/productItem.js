@@ -5,10 +5,7 @@ export default class ProductItem extends LightningElement {
   @api selectedProduct;
 
   get isSelected() {
-    if (this.product.Id === this.selectedProduct.Id) {
-      return true;
-    }
-    return false;
+    return this.product.Id === this.selectedProduct.Id;
   }
 
   selectProduct() {
@@ -21,9 +18,10 @@ export default class ProductItem extends LightningElement {
   }
 
   unselectProduct() {
-    const selectEvent = new CustomEvent("unselect", {
+    const selectEvent = new CustomEvent("select", {
       bubbles: true,
-      composed: true
+      composed: true,
+      detail: { Id: "dummyId" }
     });
     this.dispatchEvent(selectEvent);
   }

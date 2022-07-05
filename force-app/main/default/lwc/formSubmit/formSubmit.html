@@ -39,10 +39,10 @@
       <c-input-text key={textInputElement.fieldName} 
         fieldname={textInputElement.fieldName}
         classname={textInputElement.className}
-        fieldnamecheck={textInputElement.fieldnamecheck}
         requiredfield={textInputElement.requiredfield}
         requiredfieldmark={textInputElement.requiredfieldmark}
-        regexp={textInputElement.regexp}></c-input-text>
+        regexp={textInputElement.regexp}
+        onsetfield={setCaseField}></c-input-text>
     </template>
     <!-- <div class="input-container ic2">
       <input id="lastname"
@@ -115,7 +115,13 @@
         <option value="Pending">Pending</option>
       </select>
       <label for="companyType" class="placeholder">Company Type</label>
-    </div> 
+    </div>
+    <c-input-text fieldname="Company name"
+        classname="input-container ic2"
+        requiredfield=true
+        requiredfieldmark="required-field"
+        regexp="^[a-zA-Z ,.'-]+$"
+        onsetfield={setCaseField}></c-input-text>
     <!-- <div class="input-container ic2">
       <input id="company"
         onchange={setCaseCompany}
@@ -146,10 +152,10 @@
       <label for="description" class="placeholder textarea">Case content</label>
       <label for="description" class="help-message">Please describe your question</label>
     </div>
-    <div style="position: relative; width: 610px; display: inline-block;">
+    <!-- <div style="position: relative; width: 610px; display: inline-block;">
       <div class="button-wrapper">
         <button type="submit" class="button-submit" onclick={sendCase}>SUBMIT</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>

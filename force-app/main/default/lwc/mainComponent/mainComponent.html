@@ -1,29 +1,30 @@
 <template>
   <div class="component-container">
-    <template if:true={state.firstPage}>
-      <div class="status-bar">
+    <c-main-component-header></c-main-component-header>
+    <template if:true={isFPActive}>
+      <!-- <div class="status-bar">
         <div class="status-element">
           <p>PRODUCT</p>
         </div>
         <div class="status-element next mobile-disabled">
           <p>SUBMIT</p>
         </div>
-      </div>
+      </div> -->
       <c-product-selection></c-product-selection>
     </template>
-    <template if:true={state.secondPage}>
-      <div class="status-bar">
+    <template if:true={isSPActive}>
+      <!-- <div class="status-bar">
         <div class="status-element passed">
           <p>PRODUCT</p>
         </div>
         <div class="status-element next">
           <p>SUBMIT</p>
         </div>
-      </div>
+      </div> -->
       <c-form-submit></c-form-submit>
     </template>
   </div>
-  <template if:true={state.firstPage}>
+  <!-- <template if:true={state.firstPage}>
     <template if:false={buttonActive}>
       <div class="next-button">
         <button disabled class="button">NEXT</button>
@@ -63,5 +64,9 @@
         <button class="button submit">SUBMIT</button>
       </div>
     </div>
-  </template>
+  </template> -->
+  <c-main-component-navigation buttonactive={buttonActive}
+    state={currentPage}
+    onpagenav={handlePageNavEvent}>
+  </c-main-component-navigation>
 </template>

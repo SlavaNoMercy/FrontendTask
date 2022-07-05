@@ -1,0 +1,102 @@
+.secondPage-navigation {
+  width: 862px;
+  margin: auto;
+  position: relative;
+  display: block;
+  margin-top: 46px;
+}
+
+.component-container.submit-info {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: transparent;
+  box-shadow: none;
+  width: 100%;
+  position: relative;
+}
+
+.next-button {
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  max-width: 900px;
+  margin-top: 20px;
+  margin-bottom: 200px;
+}
+
+.button {
+  background-color: #cccccc;
+  border: none;
+  border-radius: 30px;
+  color: black;
+  padding: 16px 90px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button.submit {
+  background-color: #b3b3ff;
+  float: right;
+}
+
+.prev-button {
+  width: 50%;
+  float: left;
+}
+
+.next-button-submit {
+  width: 50%;
+  float: right;
+  margin-bottom: 87px;
+}
+
+.button-active {
+  background-color: #a8bcff;
+}
+
+.link-submit {
+  padding: 3px;
+}
+
+@media (max-width: 920px) {
+  .button {
+    background-color: #cccccc;
+    border: none;
+    border-radius: 30px;
+    color: rgb(27, 27, 27);
+    padding: 10.5px 45px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+  .button-active {
+    background-color: #a8bcff;
+  }
+  .button.submit {
+    border: none;
+    border-radius: 30px;
+    color: rgb(27, 27, 27);
+    padding: 10.5px 37.5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+  }
+  .secondPage-navigation {
+    width: 292px;
+    margin: auto;
+    position: relative;
+    display: block;
+    margin-top: 16px;
+  }
+  .next-button-submit {
+    width: 50%;
+    float: right;
+    margin-bottom: 21px;
+  }
+}

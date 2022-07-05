@@ -2,8 +2,8 @@
   background-color: #cccccc;
   color: black;
   border-radius: 35px;
-  width: 405px;
-  height: 200px;
+  width: 401px;
+  height: 199px;
   margin: 0px 14px 0px 14px;
   text-align: center;
 }
@@ -38,7 +38,7 @@
 .element-message {
   /*display: none;*/
   display: block;
-  font-family: "Roboto";
+  font-family: Roboto;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -62,19 +62,44 @@
     background-color: #cccccc;
     color: black;
     border-radius: 35px;
-    width: 340px;
-    height: 185px;
+    width: 280px;
+    height: 128px;
     margin: 0px 14px 0px 14px;
     text-align: center;
   }
   .element-title {
     padding-top: 0px;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 37px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
   .element-symbol {
-    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    bottom: 4px;
+    margin: auto;
+  }
+  .element-message {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -93,7 +118,4 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/robotoslab/v23/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoa4Omb2Rj.woff2)
     format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
 }

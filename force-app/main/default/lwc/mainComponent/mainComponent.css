@@ -3,24 +3,24 @@
 }
 
 .component-container {
-  max-width: 900px;
+  max-width: 862px;
   margin: auto;
-  margin-top: 0px;
+  margin-top: 100px;
   box-shadow: 0px 60px 800px #f5f5f5;
   padding-top: 10px;
   font-family: Arial;
 }
 
-.component-container.submit-info {
+/* .component-container.submit-info {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   background-color: transparent;
   box-shadow: none;
-}
+} */
 
-.status-bar {
+/* .status-bar {
   max-width: 900px;
   display: flex;
   flex-wrap: nowrap;
@@ -44,9 +44,9 @@
 
 .status-element.next {
   left: 200px;
-}
+} */
 
-.next-button {
+/* .next-button {
   margin: auto;
   display: flex;
   justify-content: end;
@@ -91,11 +91,11 @@
   border-color: rgb(12, 165, 38);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: #b4afb5;
-}
+} */
 
-.link-submit {
+/* .link-submit {
   padding: 3px;
-}
+} */
 
 @media (max-width: 920px) {
   .status-bar {
@@ -103,7 +103,7 @@
     display: flex;
     flex-wrap: nowrap;
     border-bottom: 2px solid rgb(234 234 234);
-    width: 392px;
+    width: 329px;
     margin-left: -2px;
     position: absolute;
     height: 51px;
@@ -130,9 +130,9 @@
     background-color: #a8bcff;
   }
   .component-container {
-    max-width: 355px;
+    max-width: 292px;
     margin: auto;
-    margin-top: 0px;
+    margin-top: 81px;
     box-shadow: 0px 0px 800px #f5f5f5;
     padding-top: 0px;
   }

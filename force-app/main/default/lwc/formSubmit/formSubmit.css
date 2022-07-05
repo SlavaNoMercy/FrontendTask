@@ -2,8 +2,8 @@
   background-color: #ffffff;
   border-radius: 20px;
   box-sizing: border-box;
-  padding: 20px;
-  max-width: 610px;
+  padding: 20px 7px 0 12px;
+  max-width: 535px;
   margin: auto;
   margin-top: 13px;
 }
@@ -89,7 +89,7 @@
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-20px) translateX(10px) scale(0.75);
+  transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
 .input:not(:placeholder-shown) ~ .placeholder {
@@ -98,12 +98,13 @@
 
 .input.description:focus {
   background-color: #ffffff;
-  border: 1px solid #9EAEFF;
+  border: 1px solid #9eaeff;
 }
 
 .input:focus ~ .placeholder.textarea,
 .input:not(:placeholder-shown) ~ .placeholder.textarea {
-  transform: translateY(-120px) translateX(10px) scale(0.75);
+  transform: translateY(-88px) translateX(10px) scale(0.75);
+  opacity: 0;
 }
 
 .input:not(:placeholder-shown) ~ .placeholder.textarea {
@@ -111,13 +112,13 @@
 }
 
 .input:focus ~ .help-message {
-  transform: translateY(32px);
+  transform: translateY(-22px);
   opacity: 1;
 }
 
 input:focus {
   background-color: #ffffff;
-  border: 1px solid #9EAEFF;
+  border: 1px solid #9eaeff;
 }
 
 .input:focus ~ .placeholder {
@@ -129,15 +130,13 @@ input:focus {
 }
 
 .input.description {
-  padding-top: 15px;
-  max-width: 570px;
-  min-width: 570px;
-  min-height: 292px;
-  height: 300px;
+  max-width: 516px;
+  min-width: 516px;
+  min-height: 178px;
+  height: 178px;
 }
 
 .description-area {
-  min-height: 300px;
   height: fit-content;
 }
 
@@ -168,17 +167,17 @@ input:focus {
 }
 
 label.placeholder.textarea {
-  top: 120px;
+  top: 86px;
 }
 
 .button-wrapper {
   top: 199px;
   left: 495px;
-  position: absolute
+  position: absolute;
 }
 
 .button-submit {
-  background-color: #9EAEFF;
+  background-color: #9eaeff;
   border: none;
   border-radius: 30px;
   color: rgb(27, 27, 27);
@@ -259,27 +258,37 @@ label.placeholder.textarea {
     width: 100%;
   }
   .title {
-    color: #2c2c2c;
-    font-family: sans-serif;
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 50px;
+    width: 260px;
+    height: 17px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #212e35;
+    margin-top: 51px;
   }
   .subtitle {
-    color: #8b8b8b;
-    font-family: sans-serif;
-    font-size: 19px;
-    font-weight: unset;
+    width: 269px;
+    height: 50px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #80828a;
+    margin-top: 6px;
   }
   .input.description {
-    padding-top: 15px;
-    max-width: 315px;
-    min-width: 315px;
-    min-height: 292px;
-    height: 300px;
+    max-width: 273px;
+    min-width: 273px;
+    min-height: 190px;
   }
   .description-area {
-    min-height: 300px;
     height: fit-content;
   }
   .button-wrapper {
@@ -289,7 +298,7 @@ label.placeholder.textarea {
     width: 180px;
   }
   .button-submit {
-    background-color: #9EAEFF;
+    background-color: #9eaeff;
     border: none;
     border-radius: 30px;
     color: rgb(27, 27, 27);

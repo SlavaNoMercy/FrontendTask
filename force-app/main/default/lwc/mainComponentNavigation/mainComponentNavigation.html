@@ -1,36 +1,45 @@
 <template>
-    <template if:true={buttonActive}>
-        <div class="next-button">
-          <button class="button button-active" onclick={handleNextPageEvent}>
-            NEXT
-          </button>
-        </div>
+  <template if:true={FPnavigation}>
+    <template if:false={buttonactive}>
+      <div class="next-button">
+        <button disabled class="button">NEXT</button>
+      </div>
     </template>
-    <template if:true={state.secondPage}>
-        <div class="component-container submit-info">
-          <br/><br/><br/>
+    <template if:true={buttonactive}>
+      <div class="next-button">
+        <button class="button button-active" onclick={nextPageEvent}>
+          NEXT
+        </button>
+      </div>
+    </template>
+  </template>
+  <template if:true={SPnavigation}>
+    <div class="secondPage-navigation">
+      <div class="component-container submit-info">
+        <p>
           By clicking “Submit” you confirm that you have informed consent of your
           organisation and any of its partners/proprietors to disclose such
-          information to us. All personal data will be processed in accordance with
-          the terms of our
+          information to us. All personal data will be processed in accordance
+          with the terms of our
           <a href="https://www.fleetcor.com/global-sites/" class="link-submit"
-            >Privacy Policy</a> 
-           and you understand that you may be contacted by Some Company in relation
-          to your application.<br/><br/>
-          
-          By continuing, you confirm that you have read and
-          accept the 
+            >Privacy Policy</a>
+          and you understand that you may be contacted by Some Company in relation
+          to your application.<br /><br />
+
+          By continuing, you confirm that you have read and accept the
           <a href="https://www.fleetcor.com/global-sites/" class="link-submit"
             >Terms & Conditions.</a>
+        </p>
+      </div>
+      <br />
+      <div class="component-container">
+        <div class="prev-button">
+          <button class="button" onclick={prevPageEvent}>BACK</button>
         </div>
-        <br/>
-        <div class="component-container">
-          <div class="prev-button">
-            <button class="button" onclick={handlePrevPageEvent}>BACK</button>
-          </div>
-          <div class="next-button-submit">
-            <button class="button submit">SUBMIT</button>
-          </div>
+        <div class="next-button-submit">
+          <button class="button submit">SUBMIT</button>
         </div>
-      </template>
+      </div>
+    </div>
+  </template>
 </template>
