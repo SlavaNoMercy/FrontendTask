@@ -1,8 +1,6 @@
 public without sharing class SomeCompanyController {
   @AuraEnabled
   public static String createCaseRecord(Case newCase) {
-    System.debug(newCase);
-    //Case newCase = (Case)JSON.deserialize(newCaseJSON, Case.class);
     try {
       if (newCase.AccountId == '') {
         Account acc = new Account(
@@ -11,7 +9,6 @@ public without sharing class SomeCompanyController {
         );
         insert acc;
         newCase.AccountId = acc.Id;
-        System.debug('newCase account check');
       }
       if (newCase.ContactId == '') {
         List<String> contactName = newCase.SuppliedName.split(' ', 3);
@@ -25,12 +22,11 @@ public without sharing class SomeCompanyController {
         );
         insert con;
         newCase.ContactId = con.Id;
-        System.debug('Case contact check');
       }
       newCase.Subject = 'Some company Q&A';
       newCase.Origin = 'Web';
       insert newCase;
-      return 'Case created!';
+      return 'Case created';
     } catch (Exception e) {
       return e.getMessage();
     }

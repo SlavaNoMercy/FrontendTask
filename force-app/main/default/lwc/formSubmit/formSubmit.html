@@ -8,10 +8,6 @@
     <div class="input-container ic1 selector-container">
       <select id="title" name="title" class="input selector" onchange={setCaseTitle} required>
         <option disabled selected value>Title</option>
-        <!-- <option value="Mr.">Mr.</option>
-        <option value="Ms.">Ms.</option>
-        <option value="Mrs.">Mrs.</option>
-        <option value="Dr.">Dr.</option> -->
         <template for:each={titles} for:item="title">
           <option key={title} value={title}>{title}</option>
         </template>
