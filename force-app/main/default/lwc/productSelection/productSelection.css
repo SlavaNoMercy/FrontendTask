@@ -5,13 +5,25 @@
 }
 
 .header-title {
-  font-weight: bold;
-  font-size: 28px;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
 }
 
 .header-text {
-  color: #8b8b8b;
-  font-size: 15px;
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #80828a;
 }
 
 .container {
@@ -52,7 +64,7 @@
     padding-left: 21px;
   }
   .header-text {
-    color: #80828A;
+    color: #80828a;
     width: 269px;
     height: 50px;
     font-family: "Arial";
@@ -65,9 +77,9 @@
     letter-spacing: 0.02em;
   }
   .header-title {
-    color: #212E35;
+    color: #212e35;
     width: 260px;
-    height: 17px;;
+    height: 17px;
     font-family: "Arial";
     font-style: normal;
     font-weight: 700;

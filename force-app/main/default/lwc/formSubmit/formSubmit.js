@@ -24,6 +24,19 @@ export default class FormSubmit extends LightningElement {
     description: " "
   };
 
+  titles = ["Mr.", "Ms.", "Mrs.", "Dr."];
+  companyTypes = [
+    "Prospecting",
+    "Customer-Direct",
+    "Customer-Channel",
+    "Channel Partner/Reseller",
+    "Installation Partner",
+    "Technology Partner",
+    "Other",
+    "Customer",
+    "Pending"
+  ];
+
   textFieldSet = [
     {
       fieldName: "First name",
@@ -64,10 +77,10 @@ export default class FormSubmit extends LightningElement {
   ];
 
   @wire(getRelatedContact, { contactEmail: "$newCase.email" })
-  contact = '';
+  contact = "";
 
   @wire(getRelatedAccount, { companyName: "$newCase.company" })
-  account = '';
+  account = "";
 
   setCaseField(event) {
     if (event.detail.fieldName === "First name") {
@@ -114,7 +127,7 @@ export default class FormSubmit extends LightningElement {
     fields[CASE_DESCRIPTION.fieldApiName] = this.newCase.description;
     fields[CASE_CONTACT.fieldApiName] = this.contact.data;
     fields[CASE_ACCOUNT.fieldApiName] = this.account.data;
-    createCaseRecord({newCase : fields})
+    createCaseRecord({ newCase: fields })
       .then((data) => {
         this.dispatchEvent(
           new ShowToastEvent({
@@ -137,14 +150,13 @@ export default class FormSubmit extends LightningElement {
 
   @api
   handleSubmit() {
-    console.log("event arrived");
     if (!this.checkValidity()) {
       this.dispatchEvent(
         new ShowToastEvent({
           title: "Cannot submit form",
           message: "Fill the required fields!",
-          variant: 'warning',
-          mode: 'dismissable'
+          variant: "warning",
+          mode: "dismissable"
         })
       );
       return;
@@ -153,21 +165,15 @@ export default class FormSubmit extends LightningElement {
   }
 
   checkValidity() {
-    const inputArr = this.template.querySelectorAll('c-input-text');
-    console.log(inputArr);
-    for(let item of inputArr) { // for i in a ?
-      if(!item.checkInputValidity()){
-        console.log("invalid input");
+    const inputArr = this.template.querySelectorAll("c-input-text");
+    for (let item of inputArr) {
+      if (!item.checkInputValidity()) {
         return false;
       }
     }
-    if(this.newCase.title===' '|this.newCase.description===' '){
+    if ((this.newCase.title === " ") | (this.newCase.description === " ")) {
       return false;
     }
-    // if(this.newCase.description===' '){
-    //   return false;
-    // }
-    console.log("validation passed");
     return true;
   }
 }

@@ -4,6 +4,11 @@
   width: 100%;
 }
 
+.input-container.incorrect {
+  border: 1px solid red;
+  border-radius: 35px;
+}
+
 .ic1 {
   margin-top: 20px;
   width: 32%;
@@ -18,6 +23,11 @@
 .inline-second-item {
   width: 62%;
   margin-right: 0;
+}
+
+.inline-second-item.incorrect {
+  border: 1px solid red;
+  border-radius: 35px;
 }
 
 input {
@@ -60,6 +70,7 @@ input {
   left: 19px;
   bottom: 15px;
   font-size: 12px;
+  pointer-events: none;
 }
 
 input:focus ~ .placeholder,
@@ -76,27 +87,12 @@ input:focus {
   border: 1px solid #9eaeff;
 }
 
-/* input:focus ~ .placeholder {
-  color: #000;
-} */
 
 input:focus ~ .help-message {
   transform: translateY(32px);
   opacity: 1;
 }
 
-.description {
-  padding-top: 15px;
-  max-width: 570px;
-  min-width: 570px;
-  min-height: 292px;
-  height: 300px;
-}
-
-.description-area {
-  min-height: 300px;
-  height: fit-content;
-}
 
 .input-container.ic1.selector-container {
   background-color: #f6f6f6;
@@ -130,79 +126,12 @@ label.placeholder.textarea {
 
 .fieldcheck {
   position: absolute;
-  right: 36px;
+  right: 44px;
   bottom: 5px;
   display: none
 }
 
 .fieldcheck.checked {
-  display: block;
-}
-
-.firstname-check {
-  position: absolute;
-  right: 36px;
-  bottom: 5px;
-  display: none;
-}
-
-.firstname:valid ~ .firstname-check {
-  display: block;
-}
-
-.firstname.wrong-pattern {
-    border-color: red;
-}
-
-.firstname.wrong-pattern ~ .firstname-check {
-    display: none;
-}
-
-.firstname.wrong-pattern ~ .help-message {
-    color: red;
-}
-
-.secondname-check {
-  position: absolute;
-  right: 36px;
-  bottom: 5px;
-  display: none;
-}
-
-.secondname:valid ~ .secondname-check {
-  display: block;
-}
-
-.email-check {
-  position: absolute;
-  right: 36px;
-  bottom: 5px;
-  display: none;
-}
-
-.email:valid ~ .email-check {
-  display: block;
-}
-
-.phone-check {
-  position: absolute;
-  right: 36px;
-  bottom: 5px;
-  display: none;
-}
-
-.phone:valid ~ .phone-check {
-  display: block;
-}
-
-.company-check {
-  position: absolute;
-  right: 36px;
-  bottom: 5px;
-  display: none;
-}
-
-.company:valid ~ .company-check {
   display: block;
 }
 

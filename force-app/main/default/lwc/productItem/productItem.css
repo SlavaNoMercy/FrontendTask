@@ -19,6 +19,18 @@
   font-weight: bold;
 }
 
+.element-title::selection {
+  background-color: transparent;
+}
+
+.element-symbol::selection {
+  background-color: transparent;
+}
+
+.element-message::selection {
+  background-color: transparent;
+}
+
 .element-symbol {
   font-size: 80px;
   bottom: 15px;
@@ -27,7 +39,6 @@
 }
 
 .element-symbol-hide {
-  /*font-size: 85px;*/
   display: none;
 }
 
@@ -36,7 +47,6 @@
 }
 
 .element-message {
-  /*display: none;*/
   display: block;
   font-family: Roboto;
   font-style: normal;

@@ -23,9 +23,6 @@ export default class MainComponent extends LightningElement {
       "select",
       this.handleSelectProduct.bind(this)
     );
-    //this.template.addEventListener("unselect",this.handleUnselectProduct.bind(this));
-    //this.template.addEventListener("nextPage",this.handleNextPageEvent.bind(this));
-    //this.template.addEventListener("prevPage",this.handlePrevPageEvent.bind(this));
   }
 
   handlePageNavEvent(event) {

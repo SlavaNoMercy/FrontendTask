@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="product-select-header">
     <h2 class="header-title">Choose Product</h2>
     <p class="header-text">Select the product you want to submit case for.</p>
@@ -6,16 +6,15 @@
   <div>
     <div class="container">
       <template for:each={products} for:item="currentItem">
-        <c-product-item class="slds-p-top_medium slds-p-bottom_medium"
+        <c-product-item
+          class="slds-p-top_medium slds-p-bottom_medium"
           key={currentItem.Id}
           product={currentItem}
           selected-product={selectedProduct}
-          onselect={handleSelect}>
+          onselect={handleSelect}
+        >
         </c-product-item>
       </template>
-      <!-- <div class="element" onclick={selectedProduct}>#content</div>
-      <div class="element">#content</div>
-      <div class="element">#content</div> -->
     </div>
   </div>
 </template>

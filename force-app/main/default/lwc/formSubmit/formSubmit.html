@@ -1,5 +1,5 @@
 <template>
-  <div class="form"> <!-- onsubmit={sendCase}> -->
+  <div class="form">
     <h3 class="title">Submit Case</h3>
     <div class="subtitle">
       It's easy to submit your case. Simply fill the form bellow and get a
@@ -8,33 +8,17 @@
     <div class="input-container ic1 selector-container">
       <select id="title" name="title" class="input selector" onchange={setCaseTitle} required>
         <option disabled selected value>Title</option>
-        <option value="Mr.">Mr.</option>
+        <!-- <option value="Mr.">Mr.</option>
         <option value="Ms.">Ms.</option>
         <option value="Mrs.">Mrs.</option>
-        <option value="Dr.">Dr.</option>
+        <option value="Dr.">Dr.</option> -->
+        <template for:each={titles} for:item="title">
+          <option key={title} value={title}>{title}</option>
+        </template>
       </select>
       <span class="required-field">&#128308;</span>
-      <label for="title" class="placeholder">Title</label>
-      <label for="title" class="help-message">Select correct title</label>
     </div>
-    <!-- <div class="input-container ic1 inline-second-item">
-      <input id="firstname"
-        onchange={setCaseFirstName}
-        class="input firstname"
-        type="text"
-        placeholder=" "
-        required
-        pattern="^[a-zA-Z ,.'-]+$"/>
-      <span class="required-field">&#128308;</span>
-      <label for="firstname" class="placeholder">First name</label>
-      <label for="firstname" class="help-message">Please enter your first name</label>
-      <div class="firstname-check">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
-          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-    </div> -->
+    
     <template for:each={textFieldSet} for:item="textInputElement">
       <c-input-text key={textInputElement.fieldName} 
         fieldname={textInputElement.fieldName}
@@ -45,77 +29,16 @@
         regexp={textInputElement.regexp}
         onsetfield={setCaseField}></c-input-text>
     </template>
-    <!-- <div class="input-container ic2">
-      <input id="lastname"
-        onchange={setCaseSecondName}
-        class="input lastname"
-        type="text"
-        placeholder=" "
-        required
-        pattern="^[a-zA-Z ,.'-]+$"/>
-      <span class="required-field">&#128308;</span>
-      <label for="lastname" class="placeholder">Second name</label>
-      <label for="lastname" class="help-message">Please enter your last name</label>
-      <div class="lastname-check">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
-          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-    </div> -->
-    <!-- <div class="input-container ic2">
-      <input id="email"
-        onchange={setCaseEmail}
-        class="input email"
-        type="text"
-        placeholder=" "
-        required
-        pattern="[a-z0-9._%+-]+@(?:[a-z0-9])+[a-z]+(?:[a-z0-9])+(\.[a-z]{2,}){1,}$"/>
-      <span class="required-field">&#128308;</span>
-      <label for="email" class="placeholder">Email address</label>
-      <label for="email" class="help-message">Please enter your email address</label>
-      <div class="email-check">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
-          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-    </div>
-    <div class="input-container ic2">
-      <input id="phone"
-        onchange={setCasePhone}
-        class="input phone"
-        type="text"
-        placeholder=" "
-        pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-        required/>
-      <span class="required-field">&#128308;</span>
-      <label for="phone" class="placeholder">Preffered Contact Number</label>
-      <label for="phone" class="help-message">Please enter your phone number</label>
-      <div class="phone-check">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
-          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-    </div> -->
     <div class="input-container ic2 selector-container">
       <select id="companyType"
         onchange={setCaseCompanyType}
         name="companyType"
         class="input selector">
         <option disabled selected value>Company Type</option>
-        <option value="Prospecting">Prospecting</option>
-        <option value="Customer-Direct">Customer-Direct</option>
-        <option value="Customer-Channel">Customer-Channel</option>
-        <option value="Channel Partner/Reseller">Channel Partner/Reseller</option>
-        <option value="Installation Partner">Installation Partner</option>
-        <option value="Technology Partner">Technology Partner</option>
-        <option value="Other">Other</option>
-        <option value="Customer">Customer</option>
-        <option value="Pending">Pending</option>
+        <template for:each={companyTypes} for:item="companyType">
+          <option key={companyType} value={companyType}>{companyType}</option>
+        </template>
       </select>
-      <label for="companyType" class="placeholder">Company Type</label>
     </div>
     <c-input-text fieldname="Company name"
         classname="input-container ic2"
@@ -123,24 +46,6 @@
         requiredfieldmark="required-field"
         regexp="^[a-zA-Z ,.'-]+$"
         onsetfield={setCaseField}></c-input-text>
-    <!-- <div class="input-container ic2">
-      <input id="company"
-        onchange={setCaseCompany}
-        class="input company"
-        type="text"
-        placeholder=" "
-        required
-        pattern="^[a-zA-Z0-9 ,.'-]+$"/>
-      <span class="required-field">&#128308;</span>
-      <label for="company" class="placeholder">Company</label>
-      <label for="company" class="help-message">Please enter your company name</label>
-      <div class="company-check">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="20" fill="#9EAEFF"/>
-          <path d="M15.1281 19.8937L19.4551 25.1318L28.9743 14.6556" stroke="#212E35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-      </div>
-    </div> -->
     <div class="input-container ic2 description-area">
       <textarea id="description"
         class="input description"
@@ -153,10 +58,5 @@
       <label for="description" class="placeholder textarea">Case content</label>
       <label for="description" class="help-message">Please describe your question</label>
     </div>
-    <!-- <div style="position: relative; width: 610px; display: inline-block;">
-      <div class="button-wrapper">
-        <button type="submit" class="button-submit" onclick={sendCase}>SUBMIT</button>
-      </div>
-    </div> -->
   </div>
 </template>

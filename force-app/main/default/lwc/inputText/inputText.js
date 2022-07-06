@@ -9,16 +9,17 @@ export default class InputText extends LightningElement {
   @api requiredfieldmark;
 
   @api setCaseField(event) {
-    // return;
     if (!event.target.value.match(this.regexp)) {
-      //event.target.classList.add("wrong-pattern");
       const divCheck = this.template.querySelector('[data-id="check-mark"]');
+      const divContainer = this.template.querySelector('[data-id="container"]');
       divCheck.classList.remove("checked");
+      divContainer.classList.add("incorrect");
     } else {
       const divCheck = this.template.querySelector('[data-id="check-mark"]');
+      const divContainer = this.template.querySelector('[data-id="container"]');
       divCheck.classList.add("checked");
+      divContainer.classList.remove("incorrect");
     }
-    // event.target.classList.remove("wrong-pattern");
     const setFieldVal = new CustomEvent("setfield", {
       bubbles: true,
       composed: true,
