@@ -38,6 +38,7 @@
     <template for:each={textFieldSet} for:item="textInputElement">
       <c-input-text key={textInputElement.fieldName} 
         fieldname={textInputElement.fieldName}
+        inputname={textInputElement.relatedCaseField}
         classname={textInputElement.className}
         requiredfield={textInputElement.requiredfield}
         requiredfieldmark={textInputElement.requiredfieldmark}

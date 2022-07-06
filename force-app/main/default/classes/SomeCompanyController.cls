@@ -1,28 +1,24 @@
 public without sharing class SomeCompanyController {
-  @AuraEnabled(cacheable=true)
-  public static String createCase(
-    String newCaseJSON,
-    String title,
-    String firstName,  //kostyl
-    String lastName
-  ) {
+  @AuraEnabled
+  public static String createCaseRecord(Case newCase) {
+    System.debug(newCase);
+    //Case newCase = (Case)JSON.deserialize(newCaseJSON, Case.class);
     try {
-      // if (newCaseJSON==null) {
-      //   return 'Error. Null obj refference';
-      // }
-      ParseNewCase newCase = ParseNewCase.parse(newCaseJSON);
-      System.debug(newCase);
       if (newCase.AccountId == '') {
-        Account acc = new Account(Name = newCase.SuppliedCompany);
+        Account acc = new Account(
+          Name = newCase.SuppliedCompany,
+          Type = newcase.SuppliedCompanyType__c
+        );
         insert acc;
         newCase.AccountId = acc.Id;
         System.debug('newCase account check');
       }
       if (newCase.ContactId == '') {
+        List<String> contactName = newCase.SuppliedName.split(' ', 3);
         Contact con = new Contact(
-          Title = title,
-          FirstName = firstName,
-          LastName = lastName,
+          Title = contactName[0],
+          FirstName = contactName[1],
+          LastName = contactName[2],
           Email = newCase.SuppliedEmail,
           Phone = newCase.SuppliedPhone,
           AccountId = newCase.AccountId
@@ -31,19 +27,10 @@ public without sharing class SomeCompanyController {
         newCase.ContactId = con.Id;
         System.debug('Case contact check');
       }
-      Case caseObj = new Case(
-        Origin = newCase.Origin,	
-        SuppliedName = newCase.SuppliedName,	
-        SuppliedEmail = newCase.SuppliedEmail,
-        SuppliedPhone = newCase.SuppliedPhone,
-        SuppliedCompany = newCase.SuppliedCompany,
-        SuppliedCompanyType__c = newCase.SuppliedCompanyType,
-        Description = newCase.Description,
-        ContactId = newCase.ContactId,
-        AccountId = newCase.AccountId
-      );
-      insert caseObj;
-      return 'Case inserted';
+      newCase.Subject = 'Some company Q&A';
+      newCase.Origin = 'Web';
+      insert newCase;
+      return 'Case created!';
     } catch (Exception e) {
       return e.getMessage();
     }

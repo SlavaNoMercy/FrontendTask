@@ -28,11 +28,13 @@ export default class MainComponentNavigation extends LightningElement {
     return this.state === "second";
   }
 
+  @api
   submitCase(){
     const submitEvent = new CustomEvent("submit", {
       bubbles: true,
       composed: true
     });
+    console.log("event flows");
     this.dispatchEvent(submitEvent);
   }
 }

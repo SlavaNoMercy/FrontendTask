@@ -3,6 +3,7 @@ import { api, LightningElement } from "lwc";
 export default class InputText extends LightningElement {
   @api fieldname;
   @api classname;
+  @api inputname;
   @api regexp;
   @api requiredfield;
   @api requiredfieldmark;
@@ -12,11 +13,10 @@ export default class InputText extends LightningElement {
     if (!event.target.value.match(this.regexp)) {
       //event.target.classList.add("wrong-pattern");
       const divCheck = this.template.querySelector('[data-id="check-mark"]');
-      divCheck.classList.remove('checked');
-    }
-    else {
-        const divCheck = this.template.querySelector('[data-id="check-mark"]');
-        divCheck.classList.add('checked');
+      divCheck.classList.remove("checked");
+    } else {
+      const divCheck = this.template.querySelector('[data-id="check-mark"]');
+      divCheck.classList.add("checked");
     }
     // event.target.classList.remove("wrong-pattern");
     const setFieldVal = new CustomEvent("setfield", {
@@ -27,7 +27,11 @@ export default class InputText extends LightningElement {
     this.dispatchEvent(setFieldVal);
   }
 
-  @api checkValidity(){
-
+  @api checkInputValidity() {
+    const inputField = this.template.querySelector('[data-id="input"]');
+    if (!inputField.value.match(this.regexp)) {
+      return false;
+    }
+    return true;
   }
 }

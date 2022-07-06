@@ -1,14 +1,16 @@
-import { LightningElement, track, wire } from "lwc";
-import createCase from "@salesforce/apex/SomeCompanyController.createCase";
+import { api, LightningElement, track, wire } from "lwc";
+import createCaseRecord from "@salesforce/apex/SomeCompanyController.createCaseRecord";
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getRelatedContact from "@salesforce/apex/SomeCompanyController.getRelatedContact";
 import getRelatedAccount from "@salesforce/apex/SomeCompanyController.getRelatedAccount";
-import CASE_OBJECT from "@salesforce/schema/Case";
 import FULL_NAME from "@salesforce/schema/Case.SuppliedName";
 import CASE_EMAIL from "@salesforce/schema/Case.SuppliedEmail";
 import CASE_PHONE from "@salesforce/schema/Case.SuppliedPhone";
 import CASE_COMPANY from "@salesforce/schema/Case.SuppliedCompany";
 import CASE_COMPANY_TYPE from "@salesforce/schema/Case.SuppliedCompanyType__c";
 import CASE_DESCRIPTION from "@salesforce/schema/Case.Description";
+import CASE_CONTACT from "@salesforce/schema/Case.ContactId";
+import CASE_ACCOUNT from "@salesforce/schema/Case.AccountId";
 
 export default class FormSubmit extends LightningElement {
   @track newCase = {
@@ -28,7 +30,7 @@ export default class FormSubmit extends LightningElement {
       className: "input-container ic1 inline-second-item",
       fieldnamecheck: "firstname-check",
       requiredfield: true,
-      relatedCaseField: "firstName",
+      inputfieldname: "firstname",
       requiredfieldmark: "required-field",
       regexp: "^[a-zA-Z ,.'-]+$"
     },
@@ -37,7 +39,7 @@ export default class FormSubmit extends LightningElement {
       className: "input-container ic2",
       fieldnamecheck: "secondname-check",
       requiredfield: true,
-      relatedCaseField: "secondName",
+      inputfieldname: "secondname",
       requiredfieldmark: "required-field",
       regexp: "^[a-zA-Z ,.'-]+$"
     },
@@ -46,7 +48,7 @@ export default class FormSubmit extends LightningElement {
       className: "input-container ic2",
       fieldnamecheck: "email-check",
       requiredfield: true,
-      relatedCaseField: "email",
+      inputfieldname: "email",
       requiredfieldmark: "required-field",
       regexp: "[a-z0-9._%+-]+@(?:[a-z0-9])+[a-z]+(?:[a-z0-9])+(.[a-z]{2,}){1,}$"
     },
@@ -55,30 +57,17 @@ export default class FormSubmit extends LightningElement {
       className: "input-container ic2",
       fieldnamecheck: "phone-check",
       requiredfield: true,
-      relatedCaseField: "phone",
+      inputfieldname: "phone",
       requiredfieldmark: "required-field",
       regexp: "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$"
     }
-    // ,
-    // { !otdelno!
-    //   fieldName: "Company name",
-    //   className: "input-container ic2",
-    //   fieldnamecheck: "company-check",
-    //   requiredfield: true,
-    //   requiredfieldmark: "required-field",
-    //   regexp: "^[a-zA-Z ,.'-]+$"
-    // }
   ];
 
-  connectedCallback() {
-    this.template.addEventListener("submit", this.handleSubmit.bind());
-  }
-
   @wire(getRelatedContact, { contactEmail: "$newCase.email" })
-  contact;
+  contact = '';
 
   @wire(getRelatedAccount, { companyName: "$newCase.company" })
-  account;
+  account = '';
 
   setCaseField(event) {
     if (event.detail.fieldName === "First name") {
@@ -96,11 +85,6 @@ export default class FormSubmit extends LightningElement {
     if (event.detail.fieldName === "Company name") {
       this.newCase.company = event.detail.value;
     }
-    console.log(this.newCase.firstName);
-    console.log(this.newCase.secondName);
-    console.log(this.newCase.email);
-    console.log(this.newCase.phone);
-    console.log(this.newCase.company);
   }
 
   setCaseDescription(event) {
@@ -108,66 +92,82 @@ export default class FormSubmit extends LightningElement {
   }
 
   setCaseCompanyType(event) {
-    this.newCase.description = event.target.value;
+    this.newCase.companyType = event.target.value;
   }
 
   setCaseTitle(event) {
-    this.newCase.description = event.target.value;
-  }
-  buildCase() {
-    return {
-      Origin: "Web",
-      SuppliedName:
-        this.newCase.title +
-        " " +
-        this.newCase.firstName +
-        " " +
-        this.newCase.secondName,
-      SuppliedEmail: this.newCase.email,
-      SuppliedPhone: this.newCase.phone,
-      SuppliedCompany: this.newCase.company,
-      SuppliedCompanyType: this.newCase.companyType,
-      Description: this.newCase.description,
-      ContactId: this.contact.data,
-      AccountId: this.account.data
-    };
+    this.newCase.title = event.target.value;
   }
 
-  sendCase() {
-    console.log(JSON.stringify(this.buildCase()));
-    createCase({
-      newCaseJSON: this.buildCase(),
-      title: this.newCase.title,
-      firstName: this.newCase.firstName,
-      lastName: this.newCase.secondName
-    })
-      .then((result) => {
-        console.log(result);
+  createCase() {
+    const fields = {};
+    fields[FULL_NAME.fieldApiName] =
+      this.newCase.title +
+      " " +
+      this.newCase.firstName +
+      " " +
+      this.newCase.secondName;
+    fields[CASE_EMAIL.fieldApiName] = this.newCase.email;
+    fields[CASE_PHONE.fieldApiName] = this.newCase.phone;
+    fields[CASE_COMPANY.fieldApiName] = this.newCase.company;
+    fields[CASE_COMPANY_TYPE.fieldApiName] = this.newCase.companyType;
+    fields[CASE_DESCRIPTION.fieldApiName] = this.newCase.description;
+    fields[CASE_CONTACT.fieldApiName] = this.contact.data;
+    fields[CASE_ACCOUNT.fieldApiName] = this.account.data;
+    createCaseRecord({newCase : fields})
+      .then((data) => {
+        this.dispatchEvent(
+          new ShowToastEvent({
+            title: "Success",
+            message: JSON.stringify(data.body),
+            variant: "success"
+          })
+        );
       })
       .catch((error) => {
-        console.log(error);
+        this.dispatchEvent(
+          new ShowToastEvent({
+            title: "Error creating record",
+            message: JSON.stringify(error.body),
+            variant: "error"
+          })
+        );
       });
   }
 
+  @api
   handleSubmit() {
+    console.log("event arrived");
     if (!this.checkValidity()) {
-      //alert("invalid input!");
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: "Cannot submit form",
+          message: "Fill the required fields!",
+          variant: 'warning',
+          mode: 'dismissable'
+        })
+      );
       return;
     }
-    this.sendCase();
+    this.createCase();
   }
 
   checkValidity() {
-    for (let key of Object.keys(this.newCase)) {
-      if ((this.newCase[key] === " ") & (key !== "companyType")) {
+    const inputArr = this.template.querySelectorAll('c-input-text');
+    console.log(inputArr);
+    for(let item of inputArr) { // for i in a ?
+      if(!item.checkInputValidity()){
+        console.log("invalid input");
         return false;
       }
     }
-    for (let item in this.querySelectorAll([".c-input-Text"])) {
-      if (!item.checkValidity()) {
-        return false;
-      }
+    if(this.newCase.title===' '|this.newCase.description===' '){
+      return false;
     }
+    // if(this.newCase.description===' '){
+    //   return false;
+    // }
+    console.log("validation passed");
     return true;
   }
 }

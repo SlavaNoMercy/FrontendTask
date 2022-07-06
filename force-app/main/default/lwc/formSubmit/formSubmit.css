@@ -32,7 +32,7 @@
 .ic1 {
   margin-top: 20px;
   width: 32%;
-  margin-right: 30px;
+  margin-right: 14px;
   display: inline-block;
 }
 
@@ -54,7 +54,7 @@
   font-size: 18px;
   height: 100%;
   outline: 0;
-  padding: 4px 20px 0;
+  padding: 1px 12px 2px;
   width: 100%;
 }
 
@@ -149,8 +149,8 @@ input:focus {
   font-size: 18px;
   height: 100%;
   outline: 0;
-  padding: 10px 14px 10px;
-  width: 32%;
+  padding: 17px 14px 4px;
+  width: 35%;
 }
 
 .input-container.ic2.selector-container {

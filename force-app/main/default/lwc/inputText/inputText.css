@@ -29,7 +29,7 @@ input {
   font-size: 18px;
   height: 100%;
   outline: 0;
-  padding: 4px 20px 0;
+  padding: 16px 30px 0;
   width: 100%;
 }
 
@@ -64,7 +64,7 @@ input {
 
 input:focus ~ .placeholder,
 input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-20px) scale(0.75);
+  transform: translateY(-13px) translateX(11px) scale(0.75);
 }
 
 input:not(:placeholder-shown) ~ .placeholder {
@@ -76,12 +76,13 @@ input:focus {
   border: 1px solid #9eaeff;
 }
 
-input:focus ~ .placeholder {
+/* input:focus ~ .placeholder {
   color: #000;
-}
+} */
 
-.selector {
-  width: 96%;
+input:focus ~ .help-message {
+  transform: translateY(32px);
+  opacity: 1;
 }
 
 .description {

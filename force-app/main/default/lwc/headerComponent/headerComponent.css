@@ -57,7 +57,9 @@
   transition: max-height 0.5s ease-out;
 }
 
-/* Menu Icon */
+.menu a.selected-tab {
+  text-decoration: underline;
+}
 
 .hamb {
   cursor: pointer;
@@ -90,6 +92,10 @@
   height: 100px;
   padding: 30px;
   width: 100%;
+}
+
+.alter-menu-element:hover {
+  cursor: pointer;
 }
 
 .hamb.active .hamb-line:nth-child(1) {

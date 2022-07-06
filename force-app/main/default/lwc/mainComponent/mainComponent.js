@@ -43,4 +43,8 @@ export default class MainComponent extends LightningElement {
     this.buttonActive = true;
     this.selectedProduct = chosenProduct;
   }
+
+  callSubmit() {
+    this.template.querySelector('c-form-submit').handleSubmit();
+  }
 }
