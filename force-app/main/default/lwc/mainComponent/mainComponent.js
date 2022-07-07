@@ -8,6 +8,10 @@ const pages = {
 export default class MainComponent extends LightningElement {
   @track buttonActive = false;
   @track selectedProduct;
+  @track modalStatus = false;
+  @track modalTitle = "title";
+  @track modalContent = "content";
+  @track modalVariant = "success";
 
   currentPage = "first";
 
@@ -43,5 +47,15 @@ export default class MainComponent extends LightningElement {
 
   callSubmit() {
     this.template.querySelector('c-form-submit').handleSubmit();
+  }
+
+  openModal(event) {
+    this.modalTitle = event.detail.title;
+    this.modalContent = event.detail.content;
+    this.modalVariant = event.detail.variant;
+    this.modalStatus = true;
+  }
+  closeModal() {
+    this.modalStatus = false;
   }
 }

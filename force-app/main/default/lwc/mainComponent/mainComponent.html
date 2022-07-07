@@ -1,4 +1,10 @@
 <template>
+  <c-submit-modal-window is-modal-open={modalStatus}
+    title={modalTitle}
+    content={modalContent}
+    variant={modalVariant}
+    onclosemodal={closeModal}>
+  </c-submit-modal-window>
   <div class="component-container">
     <c-main-component-header
       currentpage={currentPage}
@@ -7,7 +13,7 @@
       <c-product-selection></c-product-selection>
     </template>
     <template if:true={isSPActive}>
-      <c-form-submit></c-form-submit>
+      <c-form-submit onopenmodal={openModal}></c-form-submit>
     </template>
   </div>
   <c-main-component-navigation

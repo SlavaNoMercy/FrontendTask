@@ -1,6 +1,5 @@
 import { api, LightningElement, track, wire } from "lwc";
 import createCaseRecord from "@salesforce/apex/SomeCompanyController.createCaseRecord";
-import { ShowToastEvent } from "lightning/platformShowToastEvent";
 import getRelatedContact from "@salesforce/apex/SomeCompanyController.getRelatedContact";
 import getRelatedAccount from "@salesforce/apex/SomeCompanyController.getRelatedAccount";
 import FULL_NAME from "@salesforce/schema/Case.SuppliedName";
@@ -112,6 +111,7 @@ export default class FormSubmit extends LightningElement {
     this.newCase.title = event.target.value;
   }
 
+  @api
   createCase() {
     const fields = {};
     fields[FULL_NAME.fieldApiName] =
@@ -130,19 +130,23 @@ export default class FormSubmit extends LightningElement {
     createCaseRecord({ newCase: fields })
       .then((data) => {
         this.dispatchEvent(
-          new ShowToastEvent({
-            title: "Success",
-            message: JSON.stringify(data.body),
-            variant: "success"
+          new CustomEvent("openmodal", {
+            detail: {
+              title: "Success",
+              content: data + " You will receive the answer in minutes!",
+              variant: "success"
+            }
           })
         );
       })
       .catch((error) => {
         this.dispatchEvent(
-          new ShowToastEvent({
-            title: "Error creating record",
-            message: JSON.stringify(error.body),
-            variant: "error"
+          new CustomEvent("openmodal", {
+            detail: {
+              title: "Error creating record",
+              content: JSON.stringify(error.body),
+              variant: "error"
+            }
           })
         );
       });
@@ -152,11 +156,12 @@ export default class FormSubmit extends LightningElement {
   handleSubmit() {
     if (!this.checkValidity()) {
       this.dispatchEvent(
-        new ShowToastEvent({
-          title: "Cannot submit form",
-          message: "Fill the required fields!",
-          variant: "warning",
-          mode: "dismissable"
+        new CustomEvent("openmodal", {
+          detail: {
+            title: "Cannot submit form",
+            content: "Fill the required fields!",
+            variant: "warning"
+          }
         })
       );
       return;

@@ -1,4 +1,4 @@
-public without sharing class ParseNewCase{ // doesn't used!
+public without sharing class ParseNewCase{ // haven't used!
     public String Origin;	
     public String SuppliedName;	
     public String SuppliedEmail;

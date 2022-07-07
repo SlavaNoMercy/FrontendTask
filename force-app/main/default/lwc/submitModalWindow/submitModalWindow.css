@@ -1,0 +1,53 @@
+.slds-modal__header.success {
+  background-color: #34c134;
+  border: none;
+}
+
+.slds-modal__content.slds-p-around_medium.success {
+  background-color: #34c134;
+}
+
+.slds-modal__footer.success {
+  background-color: #34c134;
+}
+
+.slds-button.slds-button_neutral.success {
+  background-color: #a6ffa6;
+  color: black;
+}
+
+.slds-modal__header.warning {
+  background-color: #e5c735;
+  border: none;
+}
+
+.slds-modal__content.slds-p-around_medium.warning {
+  background-color: #e5c735;
+}
+
+.slds-modal__footer.warning {
+  background-color: #e5c735;
+}
+
+.slds-button.slds-button_neutral.warning {
+  background-color: #f4f5ac;
+  color: black;
+}
+
+.slds-modal__header.error {
+  background-color: #e53535;
+  border: none;
+}
+
+.slds-modal__content.slds-p-around_medium.error {
+  background-color: #e53535;
+}
+
+.slds-modal__footer.error {
+  background-color: #e53535;
+}
+
+.slds-button.slds-button_neutral.error {
+  background-color: #f5b9ac;
+  color: black;
+}

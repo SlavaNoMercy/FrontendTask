@@ -36,6 +36,7 @@
   display: flex;
   margin: auto;
   flex-wrap: wrap;
+  padding-bottom: 169px;
 }
 
 .next-button {
@@ -57,6 +58,18 @@
 }
 
 @media (max-width: 920px) {
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    height: 80%;
+    max-height: 1000px;
+    background-color: white;
+    justify-content: space-around;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-bottom: 158px;
+  }
   .product-select-header {
     margin-top: 9px;
     width: 100%;
